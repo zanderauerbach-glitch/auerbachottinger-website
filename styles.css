@@ -433,6 +433,13 @@ main { padding-top: 60px; }
   background: #ddd9d3;
 }
 
+.project-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .project-hero .placeholder-img {
   width: 100%;
   height: 100%;
@@ -519,6 +526,13 @@ main { padding-top: 60px; }
 .gallery-grid .gallery-item.wide {
   grid-column: span 2;
   aspect-ratio: 16/7;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .gallery-item .placeholder-img {
