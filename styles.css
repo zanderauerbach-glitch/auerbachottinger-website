@@ -188,6 +188,17 @@ main { padding-top: 60px; }
   object-fit: cover;
 }
 
+.slide-label {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  font-family: 'Inter', sans-serif;
+}
+
 /* Placeholder slide (shown until real photos are added) */
 .hero-slide .slide-placeholder {
   width: 100%;
