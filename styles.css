@@ -242,7 +242,7 @@ main { padding-top: 60px; }
 .hero-subtext {
   color: rgba(255,255,255,0.7);
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
+  font-size: 1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-top: 0.75rem;
