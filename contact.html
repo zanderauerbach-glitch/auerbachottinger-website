@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,8 +12,9 @@
 <header>
   <nav class="nav-inner">
     <a href="index.html" class="nav-brand">Auerbach Architecture</a>
-        <ul class="nav-links">
+    <ul class="nav-links">
       <li><a href="about.html">About</a></li>
+      <li><a href="methods.html">Methods</a></li>
       <li><a href="index.html#projects">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -25,6 +26,7 @@
 
 <nav class="mobile-menu">
   <a href="about.html">About</a>
+  <a href="methods.html">Methods</a>
   <a href="pond-house.html">Pond House</a>
   <a href="white-feather.html">White Feather</a>
   <a href="red-coat-hill.html">Red Coat Hill</a>
@@ -36,7 +38,22 @@
 </nav>
 
 <main>
-  <div class="contact-page">
+
+  <div class="project-hero">
+    <img src="images/hero/office.jpg" alt="Lincoln Old Town Hall — Office of Auerbach Architecture">
+  </div>
+
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <span class="label">Our Office</span>
+      <div class="divider"></div>
+      <h1>Lincoln Old Town Hall, 1848.</h1>
+      <div class="divider"></div>
+      <p>We are based at the Lincoln Old Town Hall — a 19th-century New England civic building at 25 Lincoln Road in Lincoln, Massachusetts. Built in 1848, it was dedicated from its first town meeting to "Political, Temperance, Antislavery &amp; Peace Meetings." We are glad to work from a building with that kind of history.</p>
+    </div>
+  </section>
+
+  <div class="contact-page" style="padding-top:0;">
     <div class="contact-inner">
 
       <div>
@@ -50,18 +67,24 @@
             <span class="detail-val"><a href="mailto:zander@auerbachottinger.com">zander@auerbachottinger.com</a></span>
           </li>
           <li>
-            <span class="detail-key">Emily</span>
-            <span class="detail-val"><a href="mailto:emily@auerbachottinger.com">emily@auerbachottinger.com</a></span>
-          </li>
-          <li>
             <span class="detail-key">Phone</span>
             <span class="detail-val"><a href="tel:9179918533">917 991 8533</a></span>
+          </li>
+          <li>
+            <span class="detail-key">Office</span>
+            <span class="detail-val">25 Lincoln Road &middot; Lincoln, MA 01773<br><span style="color:#888;font-size:0.8rem;">Second floor &mdash; the original meeting rooms</span></span>
           </li>
           <li>
             <span class="detail-key">Practice</span>
             <span class="detail-val">Martha's Vineyard &middot; Cambridge &middot; New York &middot; Hamptons &middot; Vermont &middot; Maine</span>
           </li>
         </ul>
+
+        <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid #ebebeb;">
+          <span class="label">Neighbors</span>
+          <div class="divider"></div>
+          <p>Sharing our building is <a href="https://littlegeneral.co/" target="_blank" rel="noopener" style="border-bottom:1px solid #c8c2b8; padding-bottom:1px;">The Little General</a> — a marvelous shop downstairs carrying curated housewares, vintage finds, and specialty provisions. Worth a visit.</p>
+        </div>
       </div>
 
       <div>
@@ -80,6 +103,29 @@
 
     </div>
   </div>
+
+  <!-- Map -->
+  <div class="contact-map">
+    <div class="contact-map-label">
+      <span class="label">Find Us</span>
+      <div class="divider"></div>
+      <p>25 Lincoln Road &middot; Lincoln, MA &middot; Second floor</p>
+    </div>
+    <div class="contact-map-embed">
+      <iframe
+        src="https://maps.google.com/maps?q=25+Lincoln+Road,+Lincoln,+MA+01773&z=15&output=embed"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Auerbach Architecture office location">
+      </iframe>
+    </div>
+  </div>
+
 </main>
 
 <footer>
@@ -99,5 +145,3 @@ function handleNewsletter(e) {
 </script>
 </body>
 </html>
-
-

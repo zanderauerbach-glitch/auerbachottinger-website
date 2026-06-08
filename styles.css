@@ -828,6 +828,98 @@ footer {
 .mb-2 { margin-bottom: 1rem; }
 .mt-2 { margin-top: 1rem; }
 
+/* ---- Contact Map ---- */
+.contact-map {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 460px;
+  border-top: 1px solid #ebebeb;
+}
+
+.contact-map-label {
+  padding: 4rem 3rem;
+  background: #faf8f6;
+  border-right: 1px solid #ebebeb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-map-label p {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: #666;
+}
+
+.contact-map-embed {
+  position: relative;
+  min-height: 460px;
+}
+
+.contact-map-embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 700px) {
+  .contact-map { grid-template-columns: 1fr; }
+  .contact-map-label { border-right: none; border-bottom: 1px solid #ebebeb; padding: 2.5rem 1.5rem; }
+  .contact-map-embed { min-height: 300px; }
+}
+
+/* ---- Methods Page ---- */
+.methods-block {
+  max-width: 900px;
+}
+
+.methods-block h2 {
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.methods-block p {
+  margin-bottom: 1.2rem;
+  max-width: 720px;
+}
+
+.methods-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.methods-col { }
+
+.methods-list {
+  list-style: none;
+  margin-top: 0;
+}
+
+.methods-list li {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 0.875rem;
+  color: #3a3a3a;
+  line-height: 1.75;
+}
+
+.methods-list li:first-child { border-top: 1px solid #ebebeb; }
+
+.methods-list li strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #1c1c1c;
+  margin-bottom: 0.3rem;
+}
+
+.methods-list-avoid li strong { color: #5a3a3a; }
+.methods-list-use li strong { color: #1c1c1c; }
+
 /* ---- Responsive ---- */
 @media (max-width: 960px) {
   .project-grid { grid-template-columns: repeat(2, 1fr); }
@@ -836,6 +928,7 @@ footer {
   .project-intro-inner { grid-template-columns: 1fr; gap: 3rem; }
   .team-grid { grid-template-columns: 1fr; gap: 4rem; }
   .contact-inner { grid-template-columns: 1fr; gap: 4rem; }
+  .methods-two-col { grid-template-columns: 1fr; gap: 4rem; }
 }
 
 @media (max-width: 700px) {
