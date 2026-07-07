@@ -429,9 +429,9 @@ main { padding-top: 60px; }
 .project-card-meta .status.status-design        { color: #3d6080; }
 .project-card-meta .status.status-design::before { background: #3d6080; }
 
-.meta-val.status-complete    { color: #5c7a5c; font-weight: 500; }
-.meta-val.status-construction { color: #a06a20; font-weight: 500; }
-.meta-val.status-design      { color: #3d6080; font-weight: 500; }
+.meta-val.status-complete    { color: #5c7a5c; font-weight: 400; }
+.meta-val.status-construction { color: #a06a20; font-weight: 400; }
+.meta-val.status-design      { color: #3d6080; font-weight: 400; }
 
 /* ---- Divider ---- */
 .divider {
