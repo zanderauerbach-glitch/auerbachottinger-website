@@ -565,6 +565,13 @@ main { padding-top: 60px; }
   font-style: italic;
 }
 
+.project-description h3 {
+  margin: 2.5rem 0 1.25rem;
+  font-style: italic;
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
 .project-description p {
   margin-bottom: 1rem;
   max-width: 600px;
