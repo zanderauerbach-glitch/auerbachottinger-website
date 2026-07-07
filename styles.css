@@ -612,7 +612,7 @@ main { padding-top: 60px; }
 /* Architectural drawings must never be cropped — show whole sheet.
    Background matches the blueprint blue so letterboxing is invisible. */
 .gallery-item.drawing {
-  background: #1a3b6b;
+  background: #475c78;
 }
 
 .gallery-item.drawing img {
