@@ -602,6 +602,15 @@ main { padding-top: 60px; }
   display: block;
 }
 
+/* Architectural drawings must never be cropped — show whole sheet on white */
+.gallery-item.drawing {
+  background: #fff;
+}
+
+.gallery-item.drawing img {
+  object-fit: contain;
+}
+
 .gallery-item .placeholder-img {
   width: 100%;
   height: 100%;
