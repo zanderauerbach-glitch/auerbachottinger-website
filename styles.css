@@ -602,13 +602,24 @@ main { padding-top: 60px; }
   display: block;
 }
 
-/* Architectural drawings must never be cropped — show whole sheet on white */
+/* Architectural drawings must never be cropped — show whole sheet.
+   Background matches the blueprint blue so letterboxing is invisible. */
 .gallery-item.drawing {
-  background: #fff;
+  background: #1a3b6b;
 }
 
 .gallery-item.drawing img {
   object-fit: contain;
+}
+
+/* Full-bleed page hero variant that never crops the image */
+.project-hero.uncropped {
+  height: auto;
+  min-height: 0;
+}
+
+.project-hero.uncropped img {
+  height: auto;
 }
 
 .gallery-item .placeholder-img {
