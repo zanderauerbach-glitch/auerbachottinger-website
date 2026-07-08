@@ -603,9 +603,14 @@ main { padding-top: 60px; }
 }
 
 /* Wide variant with a taller crop window: shows 15% more of the
-   photo at both top and bottom than the standard 16/7 wide */
+   photo at both top and bottom than the standard 16/7 wide,
+   then trimmed 7% at the bottom (top edge stays anchored) */
 .gallery-grid .gallery-item.wide.taller {
-  aspect-ratio: 160/91;
+  aspect-ratio: 1600/846;
+}
+
+.gallery-grid .gallery-item.wide.taller img {
+  object-position: 50% 8%;
 }
 
 /* Featured image: full row width but taller than a wide */
