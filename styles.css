@@ -602,6 +602,12 @@ main { padding-top: 60px; }
   aspect-ratio: 16/7;
 }
 
+/* Wide variant with a taller crop window: shows 15% more of the
+   photo at both top and bottom than the standard 16/7 wide */
+.gallery-grid .gallery-item.wide.taller {
+  aspect-ratio: 160/91;
+}
+
 /* Featured image: full row width but taller than a wide */
 .gallery-grid .gallery-item.large {
   grid-column: span 2;
@@ -970,6 +976,7 @@ footer {
   .project-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; padding: 0 1.5rem; }
   .gallery-grid .gallery-item.wide { grid-column: span 1; aspect-ratio: 4/3; }
+  .gallery-grid .gallery-item.wide.taller { aspect-ratio: 4/3; }
   .gallery-grid .gallery-item.large { grid-column: span 1; aspect-ratio: 4/3; }
   .section-inner, .about-hero-inner, .contact-inner, .footer-inner { padding: 0 1.5rem; }
   .project-intro-inner { padding: 0 1.5rem; }
