@@ -126,12 +126,7 @@
           <div class="divider"></div>
           <h3>Request a free estimate</h3>
           <p>Tell us a little about your project and we will be in touch within one business day.</p>
-          <form class="estimate-form" action="https://formsubmit.co/zander@auerbachottinger.com" method="POST">
-            <input type="hidden" name="_subject" value="New Free Estimate Request — auerbacharchitecture.com">
-            <input type="hidden" name="_next" value="https://auerbacharchitecture.com/thank-you.html">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <form class="estimate-form" onsubmit="handleEstimate(event)">
             <div>
               <label for="est-name">Name</label>
               <input id="est-name" type="text" name="name" required autocomplete="name">
@@ -165,6 +160,12 @@
             </div>
             <button type="submit">Request Free Estimate</button>
           </form>
+          <p class="estimate-fallback" id="estimate-fallback">
+            Your email app should have opened with your request ready to send.
+            If it didn't, simply email us directly at
+            <a href="mailto:zander@auerbachottinger.com" style="border-bottom:1px solid #c8c2b8; padding-bottom:1px;">zander@auerbachottinger.com</a>
+            with the details above.
+          </p>
         </div>
 
         <div class="newsletter-block">
@@ -265,6 +266,32 @@ function handleNewsletter(e) {
   e.preventDefault();
   document.querySelector('#newsletter-msg').style.display = 'block';
   e.target.style.display = 'none';
+}
+
+function handleEstimate(e) {
+  e.preventDefault();
+  var f = e.target;
+  var get = function (name) {
+    var el = f.elements[name];
+    return el && el.value ? el.value.trim() : '';
+  };
+  var lines = [
+    'Free estimate request from auerbacharchitecture.com',
+    '',
+    'Name: ' + get('name'),
+    'Email: ' + get('email'),
+    'Phone: ' + (get('phone') || '—'),
+    'Project location: ' + (get('project_location') || '—'),
+    'Project type: ' + get('project_type'),
+    '',
+    'About the project:',
+    get('message') || '—'
+  ];
+  var subject = 'Free Estimate Request — ' + (get('name') || 'Website');
+  window.location.href = 'mailto:zander@auerbachottinger.com'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(lines.join('\n'));
+  document.querySelector('#estimate-fallback').style.display = 'block';
 }
 </script>
 </body>

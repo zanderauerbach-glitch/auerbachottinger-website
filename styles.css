@@ -840,81 +840,105 @@ main { padding-top: 60px; }
 
 /* Estimate form */
 .estimate-block h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  margin-bottom: 0.75rem;
 }
 
 .estimate-block > p {
-  font-size: 0.8rem;
-  margin-bottom: 1.5rem;
-  color: #666;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: #3a3a3a;
+  margin-bottom: 2.5rem;
 }
 
 .estimate-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .estimate-form label {
   display: block;
-  font-size: 0.62rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #888;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .estimate-form input,
 .estimate-form select,
 .estimate-form textarea {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid #c8c2b8;
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 1px solid #c8c2b8;
   outline: none;
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.6;
   background: transparent;
   color: #1c1c1c;
   border-radius: 0;
   -webkit-appearance: none;
   appearance: none;
+  transition: border-color 0.2s;
 }
 
 .estimate-form select {
+  cursor: pointer;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23888' fill='none'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 1rem center;
+  background-position: right 0.25rem center;
 }
 
 .estimate-form input::placeholder,
-.estimate-form textarea::placeholder { color: #aaa; }
+.estimate-form textarea::placeholder { color: #b5b5b5; }
 
 .estimate-form input:focus,
 .estimate-form select:focus,
-.estimate-form textarea:focus { border-color: #1c1c1c; }
+.estimate-form textarea:focus { border-bottom-color: #1c1c1c; }
 
 .estimate-form textarea {
-  min-height: 120px;
+  min-height: 90px;
   resize: vertical;
 }
 
 .estimate-form button {
-  padding: 0.85rem 1.5rem;
-  background: #1c1c1c;
-  color: #fff;
-  border: none;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.9rem 2.5rem;
+  background: transparent;
+  color: #1c1c1c;
+  border: 1px solid #1c1c1c;
   cursor: pointer;
   font-family: 'Inter', sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
-.estimate-form button:hover { background: #333; }
+.estimate-form button:hover {
+  background: #1c1c1c;
+  color: #fff;
+}
+
+.estimate-fallback {
+  display: none;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ebebeb;
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: #666;
+}
 
 /* ---- Footer ---- */
 footer {
