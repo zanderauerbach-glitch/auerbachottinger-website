@@ -167,18 +167,6 @@
             with the details above.
           </p>
         </div>
-
-        <div class="newsletter-block">
-          <span class="label">Newsletter</span>
-          <div class="divider"></div>
-          <h3>Stay in touch</h3>
-          <p>Receive updates on new projects, publications, and firm news.</p>
-          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-            <input type="email" placeholder="Your email address" required aria-label="Email address">
-            <button type="submit">Sign Up</button>
-          </form>
-          <p id="newsletter-msg" style="margin-top:0.75rem;font-size:0.75rem;color:#666;display:none;">Thank you — you're on the list.</p>
-        </div>
       </div>
 
     </div>
@@ -262,12 +250,6 @@
 
 <script src="nav.js"></script>
 <script>
-function handleNewsletter(e) {
-  e.preventDefault();
-  document.querySelector('#newsletter-msg').style.display = 'block';
-  e.target.style.display = 'none';
-}
-
 function handleEstimate(e) {
   e.preventDefault();
   var f = e.target;
