@@ -787,6 +787,30 @@ main { padding-top: 60px; }
 
 .contact-details a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
+/* Call button */
+.call-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid #1c1c1c;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1c1c1c;
+  transition: background 0.2s, color 0.2s;
+}
+
+.call-button svg { flex-shrink: 0; }
+
+.contact-details a.call-button:hover {
+  background: #1c1c1c;
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Newsletter form */
 .newsletter-block {
   margin-top: 4rem;
