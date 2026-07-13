@@ -930,16 +930,6 @@ main { padding-top: 60px; }
   color: #fff;
 }
 
-.estimate-fallback {
-  display: none;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #ebebeb;
-  font-size: 0.8rem;
-  line-height: 1.8;
-  color: #666;
-}
-
 /* ---- Footer ---- */
 footer {
   border-top: 1px solid #ebebeb;
