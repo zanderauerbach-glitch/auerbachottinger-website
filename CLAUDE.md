@@ -47,7 +47,6 @@ auerbachottinger-website/
 │
 ├── Project pages:
 │   pond-house.html                 ← Arch Record Nov 2024 — 29 photos
-│   andesite-ridge.html             ← 10 photos
 │   jericho-path.html               ← 9 photos
 │   carriage-house.html             ← 8 photos
 │   white-feather.html              ← 7 photos
