@@ -9,8 +9,8 @@ It gives Claude full context so you never have to re-explain the project.
 ## Who You Are
 
 **Zander Auerbach** — Founder & Partner, Auerbach Ottinger Architects
-- Email: zander@auerbachottinger.com
-- Partner: Emily Ottinger (emily@auerbachottinger.com)
+- Email: zander@auerbacharchitecture.com
+- Partner: Emily Ottinger (emily@auerbacharchitecture.com)
 - Phone: 917 991 8533
 - Live site: https://auerbacharchitecture.com
 - Firm public name: **Auerbach Architecture** (used everywhere on the site)
