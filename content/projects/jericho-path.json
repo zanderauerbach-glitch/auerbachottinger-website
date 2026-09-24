@@ -1,13 +1,13 @@
 {
  "slug": "jericho-path",
  "page": "jericho-path.html",
- "order": 2,
+ "order": 3,
  "inGrid": true,
  "card": {
   "name": "Jericho Path",
   "location": "Falmouth, Massachusetts",
   "tagline": "Privacy and community, held in balance.",
-  "status": "construction",
+  "status": "complete",
   "image": "images/projects/jericho-path-03.jpg",
   "alt": "Jericho Path",
   "press": null,
@@ -37,8 +37,8 @@
    },
    {
     "key": "Status",
-    "value": "In Construction",
-    "valueClasses": " status-construction"
+    "value": "Complete",
+    "valueClasses": " status-complete"
    },
    {
     "key": "Structural Engineer",

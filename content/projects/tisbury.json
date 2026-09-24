@@ -1,10 +1,10 @@
 {
  "slug": "tisbury",
  "page": "tisbury.html",
- "order": 9,
+ "order": 11,
  "inGrid": true,
  "card": {
-  "name": "Tisbury",
+  "name": "Sound View",
   "location": "North Shore, Martha's Vineyard",
   "tagline": "A lookout over the north shore dunes.",
   "status": "design",
@@ -27,8 +27,8 @@
   "about": "Residential Architecture"
  },
  "page_content": {
-  "title": "Tisbury — Auerbach Architecture",
-  "metaDescription": "Tisbury — A lookout over the north shore dunes of Martha's Vineyard that is light on the land.",
+  "title": "Sound View — Auerbach Architecture",
+  "metaDescription": "Sound View — A lookout over the north shore dunes of Martha's Vineyard that is light on the land.",
   "details": [
    {
     "key": "Location",

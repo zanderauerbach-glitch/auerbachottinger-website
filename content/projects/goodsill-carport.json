@@ -4,7 +4,7 @@
  "order": 15,
  "inGrid": true,
  "card": {
-  "name": "Goodsill Carport",
+  "name": "Sonoma Solarport",
   "location": "Forestville, California",
   "tagline": "A carport and store under one roof.",
   "status": "construction",
@@ -27,8 +27,8 @@
   "about": "Residential Architecture, Outbuilding"
  },
  "page_content": {
-  "title": "Goodsill Carport — Auerbach Architecture",
-  "metaDescription": "Goodsill Carport — two cars and a locked store under one folded roof in Forestville, California, framed to carry a future solar array.",
+  "title": "Sonoma Solarport — Auerbach Architecture",
+  "metaDescription": "Sonoma Solarport — two cars and a locked store under one folded roof in Forestville, California, framed to carry a future solar array.",
   "details": [
    {
     "key": "Location",
@@ -61,7 +61,7 @@
     "valueClasses": ""
    }
   ],
-  "heading": "A carport and store under one roof.",
+  "heading": "Solar-ready carport and store under one roof.",
   "hero": {
    "image": null,
    "alt": "Goodsill Carport — Hero View",
