@@ -157,16 +157,17 @@ whose library is the resized copies, since the tags are on the originals.
 One file per project in `tools/studio/review/`, holding that project's marks and
 its draft layout. **In this repository they are git-ignored**: it is public, and
 the notes are working notes — who is in a photograph, what cannot be shown. The
-studio never commits them. They are kept in the private staging repository
-(`arlinladue/auerbacharchitecture-staging`); copy the folder from there to see
-the stars and the library on this machine. They used to be rows in the artifact's database; 36 marks and
+studio never commits them, so they live only on the machine that made them. The
+copy made before the handover is in the archived staging repository
+(`arlinladue/auerbacharchitecture-staging`); copy its `tools/studio/review/`
+folder here to see the stars and the library.
+
+They used to be rows in the artifact's database; 36 marks and
 2 layouts were moved across by `migrate-review.js`, which read every one back
 and compared it before declaring success, and refuses to run again over a
 repository that already holds marks.
 
-Files rather than a database means no service to be up, and — in the staging
-repository, where they are committed — git history and `git diff` on a single
-star.
+Files rather than a database means no service to be up.
 
 ## How a change reaches the site
 
@@ -216,5 +217,6 @@ no console errors, and the preview cannot serve files outside `_site`. It puts
 the file back afterwards whether it passes or fails.
 
 It needs the review notes and the resized photo copies, which are not committed
-here — copy `tools/studio/review/` and `tools/review/build/copies/` from the
-staging repository first, or it stops and says so.
+here. Copy `tools/studio/review/` (from the archived staging repository, or a
+machine that has them) and `tools/review/build/copies/` (from a machine that has
+them) first, or it stops and says so.

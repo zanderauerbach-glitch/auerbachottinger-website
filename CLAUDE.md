@@ -50,11 +50,25 @@ if any of them reappear, if `index.html` is missing, or if `CNAME` is not
   drawing sets with title blocks, and anything about where people live do not
   go in this repository at all.
 
-A staging copy exists for trying things out before they go live:
-`arlinladue/auerbacharchitecture-staging`, previewed at
-https://arlinladue.github.io/auerbacharchitecture-staging/. It also holds the
-firm's private working files (the marketing model, photo review notes, project
-briefs), which is why they are not in this repository.
+There is no staging copy any more. The one this site was built in,
+`arlinladue/auerbacharchitecture-staging`, is **archived**: private, read-only,
+and no longer published. It still holds the firm's private working files — the
+marketing model client, the studio's photo review notes, project briefs — which
+is why they are not in this repository. Do not push to it or copy its history
+here.
+
+### Trying a change before it goes live
+
+For anything bigger than a wording fix:
+
+1. Work on a branch, not on `master`.
+2. `npm run serve` and look at it at http://localhost:8080.
+3. `npm run check`.
+4. Push the branch and open a pull request. Merging it into `master` is what
+   publishes it; the **Revert** button on a merged pull request takes it back.
+
+Only Zander (`zanderauerbach-glitch`) can change the repository's Settings,
+Pages included. Arlin has write access: branches, pull requests, merges.
 
 ---
 

@@ -25,7 +25,7 @@ const before = fs.readFileSync(SUBJECT, 'utf8');
 for (const need of [REVIEW, path.join(ROOT, 'tools/review/build/copies/pennywise-path')]) {
   if (!fs.existsSync(need)) {
     console.error(`studio:test needs ${path.relative(ROOT, need)}, which is not committed here.\n` +
-      'Copy tools/studio/review/ and tools/review/build/copies/ from the staging repository, or run it there.');
+      'Copy tools/studio/review/ (from the archived staging repository) and tools/review/build/copies/ from a machine that has them.');
     process.exit(1);
   }
 }
