@@ -7,7 +7,7 @@
   "name": "Sonoma Solarport",
   "location": "Forestville, California",
   "tagline": "A carport and store under one roof.",
-  "status": "construction",
+  "status": "complete",
   "image": "images/projects/goodsill-carport-hero.jpg",
   "alt": "Goodsill Carport",
   "press": null,
@@ -37,8 +37,8 @@
    },
    {
     "key": "Status",
-    "value": "In Construction",
-    "valueClasses": " status-construction"
+    "value": "Complete",
+    "valueClasses": " status-complete"
    },
    {
     "key": "Type",
