@@ -1,0 +1,95 @@
+{
+ "slug": "meadowlark",
+ "page": "meadowlark.html",
+ "order": 14,
+ "inGrid": false,
+ "card": {
+  "name": "Meadowlark",
+  "location": "New England",
+  "tagline": "Expanding a home in dialogue with its history.",
+  "status": "design",
+  "image": null,
+  "alt": "Meadowlark",
+  "press": null,
+  "lat": null,
+  "lng": null,
+  "types": [
+   "residential",
+   "renovation"
+  ],
+  "region": null
+ },
+ "schema": {
+  "description": "Expansion of a 1980s home. Documentation phase.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "New England"
+  },
+  "about": "Residential Architecture, Home Addition"
+ },
+ "page_content": {
+  "title": "Meadowlark — Auerbach Architecture",
+  "metaDescription": "Meadowlark — Expansion of a 1980s home. Documentation phase.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "Regional",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "Documentation Phase",
+    "valueClasses": ""
+   },
+   {
+    "key": "Type",
+    "value": "Residential Expansion",
+    "valueClasses": ""
+   },
+   {
+    "key": "Built",
+    "value": "Original structure, c. 1980s",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "Expanding a home in dialogue with its history.",
+  "hero": {
+   "image": null,
+   "alt": "Meadowlark — Hero Photograph",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "wide",
+    "image": null,
+    "alt": "Meadowlark — Exterior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": null,
+    "alt": "Meadowlark — Addition Detail",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": null,
+    "alt": "Meadowlark — Interior",
+    "focal": "50% 50%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "Meadowlark is a thoughtful expansion of a 1980s residence, designed to extend the home's program while respecting the character and spatial logic of the original structure. New and existing elements are brought into conversation through careful material and formal choices.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The project is currently in the documentation phase.",
+    "style": ""
+   }
+  ]
+ }
+}

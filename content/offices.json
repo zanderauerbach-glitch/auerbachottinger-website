@@ -1,0 +1,24 @@
+[
+ {
+  "slug": "lincoln",
+  "name": "Lincoln office",
+  "place": "Lincoln Old Town Hall",
+  "location": "25 Lincoln Road, Lincoln, Massachusetts",
+  "note": "Second floor, in the original meeting rooms.",
+  "lat": 42.4241,
+  "lng": -71.3082,
+  "pinned": "the building (25 Lincoln Road, geocoded)",
+  "region": "massachusetts"
+ },
+ {
+  "slug": "vineyard",
+  "name": "Vineyard office",
+  "place": "Chappaquiddick",
+  "location": "Chappaquiddick, Martha's Vineyard",
+  "note": "",
+  "lat": 41.386,
+  "lng": -70.477,
+  "pinned": "town level: the centre of Chappaquiddick Island (geocoded), rounded like the project pins.",
+  "region": "vineyard"
+ }
+]

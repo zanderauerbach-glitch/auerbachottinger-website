@@ -1,0 +1,19 @@
+tools/review/build/
+__pycache__/
+
+# scratch written by the studio browser checks
+db-after-edit.json
+studio-focal.png
+
+# the build
+node_modules/
+_site/
+
+# the studio
+tools/studio/.thumbs/
+tools/studio/.export/
+
+
+# the studio's review notes — stars, remarks on photographs, library locations.
+# This repository is public; they are working notes and stay local.
+tools/studio/review/

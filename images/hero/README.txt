@@ -20,9 +20,33 @@ HERO IMAGES — HOW TO ADD YOUR PHOTOS
 PHOTO TIPS
 ----------
 - Landscape orientation works best (wider than tall)
-- Minimum 1600px wide for sharp display on large screens
-- JPG format is fine; keep file sizes under 1MB each for fast loading
+- 3840px wide. See "WHY 3840" below — 1600px is not enough any more.
+- JPG format is fine; up to about 1.5MB each is fine at that size
 - Great hero subjects: exteriors, dramatic interior moments, landscape/site shots
+
+WHY 3840
+--------
+The hero fills the whole window. On a 4K monitor that box is 3840 x 1987,
+and on a Retina laptop the screen asks for about 3024 across. Every file
+currently in the slideshow is between 1440 and 1800px wide, so the browser
+has to stretch it 1.7x to 2.7x, and stretching is what "soft" looks like.
+
+  red-coat-hill-04.jpg   1800px   2.13x at 4K
+  hero-14.jpg            1800px   2.13x at 4K
+  runner-road-hero.jpg   1584px   2.42x at 4K
+  hero-5.jpg             1440px   2.67x at 4K
+
+There is no way to fix this from the files in the repository. Enlarging
+them adds no detail — it makes a bigger soft picture and a slower page.
+The only fix is the original frames from the photographers, re-exported at
+3840px. Checked, and not available anywhere reachable: not in this repo's
+history, not in the shared Dropbox, not on the live site (which serves the
+same sizes), and auerbachottinger.com no longer answers.
+
+So these four need re-exporting from
+  C:\Dropbox\03_OPERATIONS, MKTING, BD\MARKETING\PROJECT IMAGES\
+or from whoever holds the originals. Anything at or above 3840px wide is
+enough; Claude will cut them to size.
 
 PROJECT IMAGES (images/projects/)
 ----------------------------------

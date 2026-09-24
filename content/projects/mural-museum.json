@@ -1,0 +1,145 @@
+{
+ "slug": "mural-museum",
+ "page": "mural-museum.html",
+ "order": 5,
+ "inGrid": true,
+ "card": {
+  "name": "Mural Museum",
+  "location": "Bridgton, Maine",
+  "tagline": "Preserving painted history in a barn.",
+  "status": "complete",
+  "image": "images/projects/mural-museum-hero.jpg",
+  "alt": "Mural Museum",
+  "press": null,
+  "lat": 44.055,
+  "lng": -70.71,
+  "types": [
+   "cultural",
+   "preservation"
+  ],
+  "region": "maine"
+ },
+ "schema": {
+  "description": "A modern barn addition to the Rufus Porter Museum campus in Bridgton, Maine, linking buildings from 1790 and 1840, with galleries displaying early 19th-century murals by Jonathan Poor. Credit: Wonwoo Park & Emily Ottinger. Mural preservation: David Ottinger.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "Bridgton, Maine"
+  },
+  "about": "Museum Architecture, Historic Preservation"
+ },
+ "page_content": {
+  "title": "Mural Museum — Auerbach Architecture",
+  "metaDescription": "Mural Museum — A modern barn addition to the Rufus Porter Museum in Bridgton, Maine, with galleries for rescued Jonathan Poor murals, by Auerbach Architecture.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "Bridgton, Maine",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "Complete",
+    "valueClasses": " status-complete"
+   },
+   {
+    "key": "Type",
+    "value": "Historic Preservation / Museum",
+    "valueClasses": ""
+   },
+   {
+    "key": "Museum Campus",
+    "value": "Rufus Porter Museum",
+    "valueClasses": ""
+   },
+   {
+    "key": "Original Buildings",
+    "value": "1790 & 1840",
+    "valueClasses": ""
+   },
+   {
+    "key": "Credit",
+    "value": "Wonwoo Park & Emily Ottinger",
+    "valueClasses": ""
+   },
+   {
+    "key": "Mural Preservation",
+    "value": "David Ottinger",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "Preserving painted history in a barn.",
+  "hero": {
+   "image": "images/projects/mural-museum-hero.jpg",
+   "alt": "Mural Museum — Historic Painted Murals",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "",
+    "image": "images/projects/mural-museum-01.jpg",
+    "alt": "Mural Museum",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/mural-museum-07.jpg",
+    "alt": "Mural Museum — guests in the new gallery barn",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/mural-museum-02.jpg",
+    "alt": "Mural Museum — Detail",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/mural-museum-03.jpg",
+    "alt": "Mural Museum — Interior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/mural-museum-05.jpg",
+    "alt": "Mural Museum — Staircase",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/mural-museum-06.jpg",
+    "alt": "Mural Museum — View to Stair",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/mural-museum-08.jpg",
+    "alt": "Mural Museum — Jonathan Poor murals at the top of the stair",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/mural-museum-09.jpg",
+    "alt": "Mural Museum — a mural wall lifted from a home slated for demolition",
+    "focal": "50% 50%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "A modern barn addition to the Rufus Porter Museum in Bridgton, Maine, dedicated to the eponymous inventor, muralist, and Scientific American founder. Porter (1792–1884) was a uniquely American polymath — an itinerant painter of New England landscape murals, an inventor whose revolving rifle design was purchased by Samuel Colt, a visionary who imagined airship travel a century before its time, and in 1845 the founder of Scientific American.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The new building anchors the museum campus with indoor and outdoor gathering spaces, and galleries that display early nineteenth-century murals by Porter’s protégé Jonathan Poor, rescued from two home demolitions in Maine. Linking campus buildings from 1790 and 1840, the new structure pays homage to their history in its massing, contours, and fenestration.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The heroes of this project are the museum — for its foresight and its ability to act quickly in rescuing these murals from buildings slated for demolition — and the preservationists whose hands carried the work.",
+    "style": ""
+   }
+  ]
+ }
+}

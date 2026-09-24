@@ -1,0 +1,141 @@
+{
+ "slug": "jericho-path",
+ "page": "jericho-path.html",
+ "order": 2,
+ "inGrid": true,
+ "card": {
+  "name": "Jericho Path",
+  "location": "Falmouth, Massachusetts",
+  "tagline": "Privacy and community, held in balance.",
+  "status": "construction",
+  "image": "images/projects/jericho-path-03.jpg",
+  "alt": "Jericho Path",
+  "press": null,
+  "lat": 41.55,
+  "lng": -70.61,
+  "types": [
+   "residential"
+  ],
+  "region": "massachusetts"
+ },
+ "schema": {
+  "description": "A residential project currently in construction on Martha's Vineyard.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "Martha's Vineyard, Massachusetts"
+  },
+  "about": "Residential Architecture"
+ },
+ "page_content": {
+  "title": "Jericho Path — Auerbach Architecture",
+  "metaDescription": "Jericho Path — A residential project on Martha's Vineyard, currently in progress.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "Falmouth, Massachusetts",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "In Construction",
+    "valueClasses": " status-construction"
+   },
+   {
+    "key": "Structural Engineer",
+    "value": "Jill Kustom Smith",
+    "valueClasses": ""
+   },
+   {
+    "key": "General Contractor",
+    "value": "NOVO Builds",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "Privacy and community, held in balance.",
+  "hero": {
+   "image": "images/projects/jericho-path-03.jpg",
+   "alt": "Jericho Path — Backyard",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "wide taller",
+    "image": "images/projects/jericho-path-10.jpg",
+    "alt": "Jericho Path — South Elevation at Dusk",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/jericho-path-hero.jpg",
+    "alt": "Jericho Path — Southeast",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/jericho-path-02.jpg",
+    "alt": "Jericho Path — Backyard Rendering",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/jericho-path-04.jpg",
+    "alt": "Jericho Path — Living",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/jericho-path-06.jpg",
+    "alt": "Jericho Path — Master",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/jericho-path-07.jpg",
+    "alt": "Jericho Path — Master Bath",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/jericho-path-08.jpg",
+    "alt": "Jericho Path — Mudroom",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "drawing",
+    "image": "images/projects/jericho-path-11.jpg",
+    "alt": "Jericho Path — Level 1 Furniture Plan",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "drawing",
+    "image": "images/projects/jericho-path-12.jpg",
+    "alt": "Jericho Path — Level 2 Furniture Plan",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "large drawing",
+    "image": "images/projects/jericho-path-13.jpg",
+    "alt": "Jericho Path — South and East Elevations",
+    "focal": "50% 50%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "This home occupies an unusual location — a popular, communally minded neighborhood in Falmouth Heights — yet is designed as a country retreat where a family can feel a genuine sense of removal. The outbuildings collectively enclose a large courtyard replete with pool, outdoor kitchen, and fireplace, creating an interior world within a social one.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "At the same time, the project aims to earn its place in a neighborhood it benefits from and hopes to benefit in return. As a large new construction, we disaggregate the mass through varied roof heights, dormers, and passageways — one forming a mudroom, the other a library, study, and TV room.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The design also responds to the late 19th-century buildings nearby, in which rooms have discrete borders rather than the open plans that followed. At Jericho Path we aim for the best of both worlds — through corridors, wide framed openings, bays, and ceiling treatments that define space without enclosing it.",
+    "style": ""
+   }
+  ]
+ }
+}

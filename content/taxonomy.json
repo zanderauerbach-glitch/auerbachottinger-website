@@ -1,0 +1,25 @@
+{
+ "TYPES": {
+  "residential": "Residential",
+  "renovation": "Renovation & Addition",
+  "preservation": "Historic Preservation",
+  "interior": "Interior Design",
+  "cultural": "Museum & Cultural",
+  "commercial": "Commercial"
+ },
+ "STATUS": {
+  "complete": "Complete",
+  "construction": "In Construction",
+  "design": "In Design"
+ },
+ "REGIONS": {
+  "vineyard": "Martha's Vineyard",
+  "massachusetts": "Massachusetts",
+  "maine": "Maine",
+  "newyork": "New York",
+  "california": "California"
+ },
+ "REGION_WITHIN": {
+  "vineyard": "massachusetts"
+ }
+}

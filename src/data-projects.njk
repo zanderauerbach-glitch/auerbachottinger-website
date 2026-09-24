@@ -1,0 +1,61 @@
+---js
+{ permalink: "data/projects.js", eleventyExcludeFromCollections: true }
+---
+/* ============================================================
+   PROJECT DATA — one entry per project page.
+   Used by: the home-page filter bar, map.html, journal.html.
+
+   Generated from content/projects/*.json and content/offices.json
+   by src/data-projects.njk. Edit those, not this file — it is
+   rebuilt on every build, and so is the home grid.
+
+   Project coordinates are deliberately TOWN-LEVEL, not the house
+   itself, so the map never reveals a private client's address.
+   Offices at a public business address are pinned at the building;
+   any other office is town-level like the projects.
+   ============================================================ */
+window.AA = window.AA || {};
+
+AA.TYPES = {
+{%- for k, v in taxonomy.TYPES %}
+  {{ k | key(14) }}{{ v | js }}{{ "," if not loop.last }}
+{%- endfor %}
+};
+
+AA.STATUS = {
+{%- for k, v in taxonomy.STATUS %}
+  {{ k | key(14) }}{{ v | js }}{{ "," if not loop.last }}
+{%- endfor %}
+};
+
+AA.REGIONS = {
+{%- for k, v in taxonomy.REGIONS %}
+  {{ k | key(15) }}{{ v | js }}{{ "," if not loop.last }}
+{%- endfor %}
+};
+
+AA.projects = [
+{%- for p in projects %}
+
+  { slug: {{ p.slug | js }}, name: {{ p.card.name | js }}, page: {{ p.page | js }},
+    location: {{ p.card.location | js }}, region: {{ p.card.region | js }}, lat: {{ p.card.lat | num }}, lng: {{ p.card.lng | num }},
+    status: {{ p.card.status | js }}, types: [{% for t in p.card.types %}{{ t | js }}{{ ", " if not loop.last }}{% endfor %}],
+    image: {{ p.card.image | js }}, alt: {{ p.card.alt | js }},
+{%- if p.card.press %}
+    press: {{ p.card.press | js }},
+{%- endif %}
+    tagline: {{ p.card.tagline | js }} }{{ "," if not loop.last }}
+{%- endfor %}
+];
+
+AA.offices = [
+{%- for o in offices %}
+  { slug: {{ o.slug | js }}, name: {{ o.name | js }}, place: {{ o.place | js }},
+    location: {{ o.location | js }}, note: {{ o.note | js }}, region: {{ o.region | js }},
+    lat: {{ o.lat | num }}, lng: {{ o.lng | num }} }{{ "," if not loop.last }}
+{%- endfor %}
+];
+
+AA.projectBySlug = function (slug) {
+  return AA.projects.find(function (p) { return p.slug === slug; }) || null;
+};

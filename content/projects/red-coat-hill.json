@@ -1,0 +1,146 @@
+{
+ "slug": "red-coat-hill",
+ "page": "red-coat-hill.html",
+ "order": 7,
+ "inGrid": true,
+ "card": {
+  "name": "Red Coat Hill",
+  "location": "West Tisbury, Martha's Vineyard",
+  "tagline": "Martha's Vineyard was made by ice.",
+  "status": "construction",
+  "image": "images/projects/red-coat-hill-hero.jpg",
+  "alt": "Red Coat Hill",
+  "press": null,
+  "lat": 41.385,
+  "lng": -70.69,
+  "types": [
+   "residential"
+  ],
+  "region": "vineyard"
+ },
+ "schema": {
+  "description": "A 3,800 sq ft multigenerational residence currently in construction in West Tisbury, Martha's Vineyard, by Auerbach Architecture. General contractor: Novo Builds. Structural engineer: Jill Kustom Smith.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "West Tisbury, Martha's Vineyard, Massachusetts"
+  },
+  "about": "Residential Architecture",
+  "size": "3,800 sq ft"
+ },
+ "page_content": {
+  "title": "Red Coat Hill — Auerbach Architecture",
+  "metaDescription": "Red Coat Hill — A 3,800 sq ft multigenerational residence in construction in West Tisbury, Martha's Vineyard, by Auerbach Architecture.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "West Tisbury, Martha's Vineyard",
+    "valueClasses": ""
+   },
+   {
+    "key": "Size",
+    "value": "3,800 sq ft",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "In Construction",
+    "valueClasses": " status-construction"
+   },
+   {
+    "key": "Structural Engineer",
+    "value": "Jill Kustom Smith",
+    "valueClasses": ""
+   },
+   {
+    "key": "General Contractor",
+    "value": "Novo Builds",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "Martha's Vineyard was made by ice.",
+  "hero": {
+   "image": "images/projects/red-coat-hill-hero.jpg",
+   "alt": "Red Coat Hill — Exterior at Dusk",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "wide",
+    "image": "images/projects/red-coat-hill-01.jpg",
+    "alt": "Red Coat Hill — Day Exterior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/red-coat-hill-02.jpg",
+    "alt": "Red Coat Hill — Living Room and Kitchen",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/red-coat-hill-03.jpg",
+    "alt": "Red Coat Hill — Den",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/red-coat-hill-04.jpg",
+    "alt": "Red Coat Hill — Dining Room",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/red-coat-hill-05.jpg",
+    "alt": "Red Coat Hill — Aerial View",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "drawing",
+    "image": "images/projects/red-coat-hill-06.jpg",
+    "alt": "Red Coat Hill — Site Plan",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "drawing",
+    "image": "images/projects/red-coat-hill-07.jpg",
+    "alt": "Red Coat Hill — Level 1 Floor Plan",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "drawing",
+    "image": "images/projects/red-coat-hill-08.jpg",
+    "alt": "Red Coat Hill — South Elevation",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "drawing",
+    "image": "images/projects/red-coat-hill-09.jpg",
+    "alt": "Red Coat Hill — North Elevation",
+    "focal": "50% 50%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "Martha's Vineyard is a glacial landscape. When the Laurentide Ice Sheet withdrew eighteen thousand years ago, it left the island two signatures: kettles, the bowl-shaped hollows where buried ice melted back into the earth, and moraines, the ridges of stone the glacier carried and set down at its edge. Hollow and rise, hollow and rise — the island's topography is the record of that retreat.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "Red Coat Hill sits in one of those kettles. A moraine spine runs through the site, dividing it into territories of exposure and shelter, and the house answers directly: set along the ridge, facing the bowl, reaching forward into the open ground the glacier left behind.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "Inside, a great room and study anchor the plan. To either side, narrow window-lined corridors turn the eye back toward the house itself, so that moving through the building feels like passing between three distinct volumes — an experience of passage as much as enclosure.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "At 3,800 square feet, this is among the larger homes in our practice, and the scale is purposeful. Our clients asked for one thing above all: a place where generations gather. Four en-suite bedrooms and a layered sequence of indoor and outdoor rooms answer that call, all of it oriented toward the meadow that will become the family's center of gravity.",
+    "style": ""
+   }
+  ]
+ }
+}

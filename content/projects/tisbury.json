@@ -1,0 +1,99 @@
+{
+ "slug": "tisbury",
+ "page": "tisbury.html",
+ "order": 9,
+ "inGrid": true,
+ "card": {
+  "name": "Tisbury",
+  "location": "North Shore, Martha's Vineyard",
+  "tagline": "A lookout over the north shore dunes.",
+  "status": "design",
+  "image": "images/projects/tisbury-hero.jpg",
+  "alt": "Tisbury",
+  "press": null,
+  "lat": 41.44,
+  "lng": -70.66,
+  "types": [
+   "residential"
+  ],
+  "region": "vineyard"
+ },
+ "schema": {
+  "description": "A lookout over the north shore dunes of Martha's Vineyard — light on the land.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "Martha's Vineyard, Massachusetts"
+  },
+  "about": "Residential Architecture"
+ },
+ "page_content": {
+  "title": "Tisbury — Auerbach Architecture",
+  "metaDescription": "Tisbury — A lookout over the north shore dunes of Martha's Vineyard that is light on the land.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "North Shore, Martha's Vineyard",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "In Design",
+    "valueClasses": " status-design"
+   },
+   {
+    "key": "Setting",
+    "value": "Coastal dunes, forest canopy",
+    "valueClasses": ""
+   },
+   {
+    "key": "Approach",
+    "value": "Passive solar, biogenic materials, reduced footprint",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "A lookout over the north shore dunes that is light on the land.",
+  "hero": {
+   "image": "images/projects/tisbury-hero.jpg",
+   "alt": "Tisbury — North Shore, Martha's Vineyard",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "wide",
+    "image": "images/projects/tisbury-03.jpg",
+    "alt": "Tisbury — Detail",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/tisbury-02.jpg",
+    "alt": "Tisbury — View",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/tisbury-04.jpg",
+    "alt": "Tisbury — Rendering",
+    "focal": "50% 50%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "Tisbury is sited at the edge of a coastal forest, positioned above the forest canopy to capture sweeping views of the dunes and ocean beyond. Outdoor living spaces occupy the upper levels, where light, air, and landscape converge.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The design emphasizes minimal environmental impact — a reduced foundation footprint, passive solar orientation, and biogenic building materials that will weather in harmony with the coastal setting. The building presents as a unified form, with continuous siding interrupted only by vertical window bands that frame carefully considered views.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The project is currently progressing from schematic design through construction documentation.",
+    "style": ""
+   }
+  ]
+ }
+}

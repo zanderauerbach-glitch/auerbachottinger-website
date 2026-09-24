@@ -1,0 +1,115 @@
+{
+ "slug": "goodsill-carport",
+ "page": "goodsill-carport.html",
+ "order": 15,
+ "inGrid": true,
+ "card": {
+  "name": "Goodsill Carport",
+  "location": "Forestville, California",
+  "tagline": "A carport and store under one roof.",
+  "status": "construction",
+  "image": null,
+  "alt": "Goodsill Carport",
+  "press": null,
+  "lat": 38.473,
+  "lng": -122.89,
+  "types": [
+   "residential"
+  ],
+  "region": "california"
+ },
+ "schema": {
+  "description": "Two cars and a locked store under one folded roof, framed to carry a future solar array. In construction.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "Forestville, California"
+  },
+  "about": "Residential Architecture, Outbuilding"
+ },
+ "page_content": {
+  "title": "Goodsill Carport — Auerbach Architecture",
+  "metaDescription": "Goodsill Carport — two cars and a locked store under one folded roof in Forestville, California, framed to carry a future solar array.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "Forestville, California",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "In Construction",
+    "valueClasses": " status-construction"
+   },
+   {
+    "key": "Type",
+    "value": "Carport and store",
+    "valueClasses": ""
+   },
+   {
+    "key": "Size",
+    "value": "23 ft by 34 ft 8 in",
+    "valueClasses": ""
+   },
+   {
+    "key": "Roof",
+    "value": "Standing seam metal, framed for solar",
+    "valueClasses": ""
+   },
+   {
+    "key": "Cladding",
+    "value": "Fiber cement, V-groove",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "A carport and store under one roof.",
+  "hero": {
+   "image": null,
+   "alt": "Goodsill Carport — Hero View",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "wide",
+    "image": null,
+    "alt": "Goodsill Carport — The Long Elevation",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": null,
+    "alt": "Goodsill Carport — The Open Bays",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": null,
+    "alt": "Goodsill Carport — The Store and its Barn Door",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": null,
+    "alt": "Goodsill Carport — The Roof, Framed for Solar",
+    "focal": "50% 50%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "A carport for two cars and a small locked store in Forestville, California, under one folded roof. The roof is low over the cars, six foot eight at the open end, and rises to eleven foot seven over the store.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The roof is standing seam metal on fourteen-inch joists, sized to take solar panels later, with room in the store for the batteries.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The walls are fiber cement with a V-groove. A two-inch gap under the eave, screened against insects, ventilates the roof along its full length. A barn door closes the store on the west side, and there's one window, facing north. Only the store has a slab: four inches, sloped a quarter inch per foot to drain. The cars park on bluestone and fines, so rain goes into the ground.",
+    "style": ""
+   }
+  ]
+ }
+}

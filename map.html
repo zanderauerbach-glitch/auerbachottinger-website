@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NS4M89QR');</script>
+  <!-- End Google Tag Manager -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where We Build — Auerbach Architecture</title>
+  <meta name="description" content="A map of Auerbach Architecture's projects across Martha's Vineyard, Massachusetts, Maine, the Hamptons, and California.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NS4M89QR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header>
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-brand">Auerbach Architecture</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="methods.html">Methods</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="journal.html">Field Notes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+<nav class="mobile-menu">
+  <a href="about.html">About</a>
+  <a href="methods.html">Methods</a>
+  <a href="index.html#projects">Projects</a>
+  <a href="journal.html">Field Notes</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section class="page-intro">
+    <div class="section-inner">
+      <span class="label">Where We Build</span>
+      <div class="divider"></div>
+      <h1>Light on the land, wherever the land is.</h1>
+      <p>From the glacial moraine of Martha's Vineyard to a Maine lake and the high desert of Joshua Tree, each project begins with its ground. Markers sit at the nearest town, not the house itself. The Lincoln office is marked at the Old Town Hall.</p>
+      <div class="map-views" role="group" aria-label="Map view">
+        <button type="button" class="map-view" data-view="vineyard">Martha's Vineyard</button>
+        <button type="button" class="map-view" data-view="northeast">Northeast</button>
+        <button type="button" class="map-view" data-view="all">Everywhere</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-wrap">
+    <div id="project-map" aria-label="Map of projects"></div>
+    <div class="map-legend">
+      <span><i class="aa-marker" style="background:#5c7a5c"></i>Complete</span>
+      <span><i class="aa-marker" style="background:#a06a20"></i>In Construction</span>
+      <span><i class="aa-marker" style="background:#3d6080"></i>In Design</span>
+      <span><i class="aa-office"></i>Office</span>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header"><span class="label">By Region</span></div>
+      <div id="map-list" class="map-list"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">Auerbach Architecture</span>
+    <nav class="footer-links" aria-label="More">
+      <a href="faq.html">Frequently asked questions</a>
+    </nav>
+    <span class="footer-copy">&copy; 2026 Auerbach Architecture. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" crossorigin=""></script>
+<script src="data/projects.js"></script>
+<script src="nav.js"></script>
+<script src="map.js"></script>
+</body>
+</html>
