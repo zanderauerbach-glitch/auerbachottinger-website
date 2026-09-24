@@ -50,11 +50,25 @@ if any of them reappear, if `index.html` is missing, or if `CNAME` is not
   drawing sets with title blocks, and anything about where people live do not
   go in this repository at all.
 
-A staging copy exists for trying things out before they go live:
-`arlinladue/auerbacharchitecture-staging`, previewed at
-https://arlinladue.github.io/auerbacharchitecture-staging/. It also holds the
-firm's private working files (the marketing model, photo review notes, project
-briefs), which is why they are not in this repository.
+There is no staging copy any more. The one this site was built in,
+`arlinladue/auerbacharchitecture-staging`, is **archived**: private, read-only,
+and no longer published. It still holds the firm's private working files — the
+marketing model client, the studio's photo review notes, project briefs — which
+is why they are not in this repository. Do not push to it or copy its history
+here.
+
+### Trying a change before it goes live
+
+For anything bigger than a wording fix:
+
+1. Work on a branch, not on `master`.
+2. `npm run serve` and look at it at http://localhost:8080.
+3. `npm run check`.
+4. Push the branch and open a pull request. Merging it into `master` is what
+   publishes it; the **Revert** button on a merged pull request takes it back.
+
+Only Zander (`zanderauerbach-glitch`) can change the repository's Settings,
+Pages included. Arlin has write access: branches, pull requests, merges.
 
 ---
 
@@ -98,20 +112,18 @@ is pinned exactly; any other office is pinned at town level like the projects.
 
 `npm ci` once, then `npm run serve` to see the site at http://localhost:8080.
 
-`npm run check` — lint, then the documented-commands check, then a build, then
-`compare`. It must exit 0 before anything is pushed to `master`.
+`npm run check` — lint, then the documented-commands check, then a build. It
+must exit 0 before anything is pushed to `master`.
 
-`compare` rebuilds the site and compares every page against the commit in
-`tools/build/BASELINE` as a browser would see it (elements, attributes,
-collapsed text, JSON-LD as parsed objects), so source formatting is not
-mistaken for a change. A difference is a real difference.
-
-Differences that are *meant* live in `tools/build/ACCEPTED.json`, each against a
-fingerprint of the exact lines that differ, with a written reason. Any other
-difference on the same page still fails, and an entry for a page that has
-stopped differing fails too — so the list cannot fill up with exemptions nobody
-rechecks. `npm run compare:accept` regenerates it and refuses to be useful until
-you write the reason by hand.
+`npm run compare` — what this branch changes on the built site. It builds
+`master` as it is on GitHub, builds this checkout, and lists every page that
+differs as a browser would see it (elements, attributes, collapsed text, JSON-LD
+as parsed objects), plus every changed field in `data/projects.js`. Source
+formatting is not mistaken for a change. Run it after a template, stylesheet or
+script change that should leave the pages alone — it should say "identical" —
+and to confirm a content edit touched only the pages it meant to. It exits 1
+whenever anything differs; reading whether that is the difference you meant is
+your job.
 
 The browser suites are separate because they need Playwright's Chromium:
 `npm run filters:test` (the portfolio filters), `npm run map:test` (no two
@@ -168,8 +180,8 @@ that does not sync through Dropbox. It reports and writes nothing without
 **Naming convention:** `pond-house-01.jpg` style for projects; `<project>-hero.jpg` for each project's hero image.
 
 No sheet from a drawing set goes on the site until its title block is cropped or
-blanked, and no photograph that shows people's faces or a client's private
-papers.
+blanked, and no photograph that shows a client's private papers. People,
+faces included, may appear in photographs.
 
 **Dropbox photo source:** `C:\Dropbox\03_OPERATIONS, MKTING, BD\MARKETING\PROJECT IMAGES\`
 

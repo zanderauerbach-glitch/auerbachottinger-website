@@ -1,51 +1,69 @@
-/* Prove the generated site is the site we already had.
+#!/usr/bin/env node
+/* What does this branch change on the built site?
  *
- *     node tools/build/compare.js            compare _site against HEAD
- *     node tools/build/compare.js --ref X    ...against some other commit
+ *     npm run compare                       against master, as it is on GitHub
+ *     node tools/build/compare.js --ref X   ...against some other commit
  *
- * Source formatting differs — the hand-written pages are not consistent with
- * each other, let alone with a template — so this compares what a browser
- * builds, not what the file looks like:
+ * Builds X in a temporary checkout, then compares every page with this
+ * checkout's _site (npm run compare builds that first). Use it after a
+ * template, stylesheet or script change that should leave the pages alone, and
+ * to confirm a content edit touched only the pages it meant to.
+ *
+ * Source formatting differs from build to build, so this compares what a
+ * browser builds, not what the file looks like:
  *
  *   - every element, in order, with its tag and its attributes
  *   - the text, with runs of whitespace collapsed
  *   - JSON-LD compared as parsed objects, since key order carries no meaning
  *
- * A difference here is a real difference. Whitespace and attribute order are
- * not, and are the only things it forgives.
+ * A difference here is a real difference. It exits 1 when anything differs, so
+ * "identical" is something a script can rely on; whether a difference is the
+ * one you meant is yours to read.
  *
- * Some differences are meant. ACCEPTED.json records those, each against a
- * fingerprint of the exact lines that differ, so an accepted difference stays
- * quiet and anything else on the same page still fails. Adding an entry is
- * deliberate:
- *
- *     node tools/build/compare.js --accept   then write the "why" by hand
- *
- * An entry whose page has stopped differing fails too. Otherwise the list
- * would fill up with exemptions nobody rechecks, and a regression would hide
- * behind one.
+ * It used to measure every page against the hand-written site from before
+ * Eleventy, with an allow-list for intended differences. That guarded the
+ * migration. Once the site was live, every ordinary content edit failed it.
  */
 const fs = require('node:fs');
-const crypto = require('node:crypto');
+const os = require('node:os');
+const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 const { parseHTML } = require('linkedom');
 const vm = require('node:vm');
 
+const ROOT = path.resolve(__dirname, '..', '..');
+const SITE = path.join(ROOT, '_site');
+const git = (...args) => execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
+
 const ref = (() => {
   const i = process.argv.indexOf('--ref');
   if (i !== -1) return process.argv[i + 1];
-  // The commit the site had before any of this, so the comparison keeps
-  // meaning once the hand-written pages are deleted.
-  return fs.readFileSync(__dirname + '/BASELINE', 'utf8').trim();
+  try { git('fetch', '--quiet', 'origin', 'master'); } catch { /* offline: use what we have */ }
+  return 'origin/master';
 })();
 
-const fromGit = (p) => {
-  try {
-    return execFileSync('git', ['show', `${ref}:${p}`], { encoding: 'utf8', maxBuffer: 1 << 28 });
-  } catch {
-    return null;
-  }
-};
+if (!fs.existsSync(path.join(SITE, 'index.html'))) {
+  console.error('No _site to compare. Run `npm run compare`, which builds first.');
+  process.exit(2);
+}
+
+/* Build the base in a checkout of its own, so this one is never touched. */
+const sha = git('rev-parse', '--verify', `${ref}^{commit}`);
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'aa-compare-'));
+let BASE;
+try {
+  git('worktree', 'add', '--detach', '--force', tmp, sha);
+  fs.symlinkSync(path.join(ROOT, 'node_modules'), path.join(tmp, 'node_modules'), 'dir');
+  execFileSync(path.join(ROOT, 'node_modules', '.bin', 'eleventy'), ['--quiet'], { cwd: tmp, stdio: 'ignore' });
+  BASE = path.join(tmp, '_site');
+} catch (e) {
+  cleanup();
+  console.error(`Could not build ${ref}: ${e.message}`);
+  process.exit(2);
+}
+function cleanup() {
+  try { git('worktree', 'remove', '--force', tmp); } catch { fs.rmSync(tmp, { recursive: true, force: true }); }
+}
 
 const norm = (s) => s.replace(/\s+/g, ' ').trim();
 
@@ -109,60 +127,6 @@ const sortDeep = (v) => {
   return v;
 };
 
-const ACCEPTED_FILE = __dirname + '/ACCEPTED.json';
-const accepted = fs.existsSync(ACCEPTED_FILE) ? JSON.parse(fs.readFileSync(ACCEPTED_FILE, 'utf8')) : {};
-const writeAccept = process.argv.includes('--accept');
-const fingerprint = (diffs) => crypto.createHash('sha256').update(JSON.stringify(diffs)).digest('hex').slice(0, 16);
-const found = {};                       // what actually differs on this run
-
-const built = fs.readdirSync('_site').filter((f) => f.endsWith('.html')).sort();
-let differing = 0;
-let allowed = 0;
-let missing = 0;
-let dataAccepted = false;
-let dataDiffers = false;
-
-for (const page of built) {
-  const before = fromGit(page);
-  if (before === null) {
-    console.log(`  + ${page} is new — nothing at ${ref} to compare it with`);
-    missing++;
-    continue;
-  }
-  const a = facts(before, `${ref}:${page}`);
-  const b = facts(fs.readFileSync(`_site/${page}`, 'utf8'), `_site/${page}`);
-  if (a.length === b.length && a.every((line, i) => line === b[i])) continue;
-
-  const diffs = [];
-  for (let i = 0; i < Math.max(a.length, b.length); i++) {
-    if (a[i] !== b[i]) diffs.push([a[i] ?? null, b[i] ?? null]);
-  }
-  const fp = fingerprint(diffs);
-  found[page] = fp;
-
-  if (accepted[page] && accepted[page].fingerprint === fp) {
-    allowed++;
-    console.log(`  = ${page} — accepted: ${accepted[page].why}`);
-    continue;
-  }
-
-  differing++;
-  console.log(`\n  ! ${page}`);
-  if (accepted[page]) {
-    console.log(`      this page has an accepted difference on record, and this is not it`);
-    console.log(`      (was ${accepted[page].fingerprint}, now ${fp})`);
-  }
-  diffs.slice(0, 6).forEach(([was, now]) => {
-    console.log(`      was  ${was === null ? '(nothing)' : was.slice(0, 150)}`);
-    console.log(`      now  ${now === null ? '(nothing)' : now.slice(0, 150)}`);
-  });
-  const more = a.length !== b.length ? ` (${a.length} facts before, ${b.length} now)` : '';
-  if (diffs.length > 6) console.log(`      …and ${diffs.length - 6} more${more}`);
-}
-
-/* data/projects.js is generated too. Formatting there carries no meaning
-   either — 41.40 and 41.4 are the same coordinate — so compare what the
-   browser ends up with, not the text. */
 function evalProjects(src, label) {
   // `window.AA = …` has to create a global the way it does in a browser,
   // because the next line is a bare `AA.TYPES = …`.
@@ -177,69 +141,67 @@ function evalProjects(src, label) {
   }
   return ctx.AA;
 }
-const dataBefore = evalProjects(fromGit('data/projects.js') || '', `${ref}:data/projects.js`);
-const dataAfter = evalProjects(fs.readFileSync('_site/data/projects.js', 'utf8'), '_site/data/projects.js');
-if (dataBefore && dataAfter) {
-  const shape = (a) => JSON.stringify(sortDeep({
-    TYPES: a.TYPES, STATUS: a.STATUS, REGIONS: a.REGIONS,
-    projects: a.projects.map((p) => sortDeep(p)),
-  }));
-  if (shape(dataBefore) !== shape(dataAfter)) {
-    const A = dataBefore.projects, B = dataAfter.projects;
-    const lines = [];
-    if (A.length !== B.length) lines.push([`${A.length} projects`, `${B.length} projects`]);
-    for (let i = 0; i < Math.min(A.length, B.length); i++) {
-      for (const k of new Set([...Object.keys(A[i]), ...Object.keys(B[i])])) {
-        if (JSON.stringify(A[i][k]) !== JSON.stringify(B[i][k])) {
-          lines.push([`${A[i].slug}.${k} ${JSON.stringify(A[i][k])}`, `${A[i].slug}.${k} ${JSON.stringify(B[i][k])}`]);
-        }
-      }
+
+const pagesIn = (dir) => fs.readdirSync(dir).filter((f) => f.endsWith('.html')).sort();
+const built = pagesIn(SITE);
+const base = pagesIn(BASE);
+let differing = 0;
+
+for (const page of built) {
+  if (!base.includes(page)) { console.log(`  + ${page} is new`); continue; }
+  const a = facts(fs.readFileSync(path.join(BASE, page), 'utf8'), `${ref}:${page}`);
+  const b = facts(fs.readFileSync(path.join(SITE, page), 'utf8'), `_site/${page}`);
+  if (a.length === b.length && a.every((line, i) => line === b[i])) continue;
+  differing++;
+  const diffs = [];
+  for (let i = 0; i < Math.max(a.length, b.length); i++) {
+    if (a[i] !== b[i]) diffs.push([a[i] ?? null, b[i] ?? null]);
+  }
+  console.log(`\n  ~ ${page}`);
+  diffs.slice(0, 6).forEach(([was, now]) => {
+    console.log(`      was  ${was === null ? '(nothing)' : was.slice(0, 150)}`);
+    console.log(`      now  ${now === null ? '(nothing)' : now.slice(0, 150)}`);
+  });
+  const more = a.length !== b.length ? ` (${a.length} facts before, ${b.length} now)` : '';
+  if (diffs.length > 6) console.log(`      …and ${diffs.length - 6} more${more}`);
+}
+const dropped = base.filter((f) => !built.includes(f));
+dropped.forEach((f) => console.log(`\n  - ${f} is built at ${ref} and not here`));
+
+/* data/projects.js drives the filters, the map and Field Notes. Formatting
+   there carries no meaning either — 41.40 and 41.4 are the same coordinate —
+   so compare what the browser ends up with, not the text. */
+let dataDiffers = false;
+const dataBefore = evalProjects(fs.readFileSync(path.join(BASE, 'data/projects.js'), 'utf8'), `${ref}:data/projects.js`);
+const dataAfter = evalProjects(fs.readFileSync(path.join(SITE, 'data/projects.js'), 'utf8'), '_site/data/projects.js');
+if (!dataBefore || !dataAfter) {
+  dataDiffers = true;
+} else {
+  const lines = [];
+  for (const k of ['TYPES', 'STATUS', 'REGIONS', 'offices']) {
+    if (JSON.stringify(sortDeep(dataBefore[k])) !== JSON.stringify(sortDeep(dataAfter[k]))) lines.push(`AA.${k} changed`);
+  }
+  const bySlug = (list) => new Map((list || []).map((p) => [p.slug, p]));
+  const A = bySlug(dataBefore.projects), B = bySlug(dataAfter.projects);
+  for (const slug of new Set([...A.keys(), ...B.keys()])) {
+    if (!A.has(slug)) { lines.push(`${slug} added`); continue; }
+    if (!B.has(slug)) { lines.push(`${slug} removed`); continue; }
+    for (const k of new Set([...Object.keys(A.get(slug)), ...Object.keys(B.get(slug))])) {
+      const was = JSON.stringify(sortDeep(A.get(slug)[k])), now = JSON.stringify(sortDeep(B.get(slug)[k]));
+      if (was !== now) lines.push(`${slug}.${k}  ${was} → ${now}`);
     }
-    const fp = fingerprint(lines);
-    found['data/projects.js'] = fp;
-    const acc = accepted['data/projects.js'];
-    if (acc && acc.fingerprint === fp) {
-      dataAccepted = true;            // not a page, so not counted among them
-      console.log(`  = data/projects.js — accepted: ${acc.why}`);
-    } else {
-      dataDiffers = true;             // fails the run, but is not a page
-      console.log('\n  ! data/projects.js');
-      if (acc) console.log(`      an accepted difference is on record, and this is not it (was ${acc.fingerprint}, now ${fp})`);
-      lines.forEach(([was, now]) => console.log(`      was  ${was}\n      now  ${now}`));
-    }
-  } else {
-    console.log('  data/projects.js — 16 projects, every field identical');
+  }
+  if (lines.length) {
+    dataDiffers = true;
+    console.log('\n  ~ data/projects.js');
+    lines.forEach((l) => console.log(`      ${l.slice(0, 200)}`));
   }
 }
 
-/* An exemption for something that no longer differs is worse than no
-   exemption: it is a place for a future regression to hide. */
-const stale = Object.keys(accepted).filter((k) => !(k in found));
-if (stale.length) {
-  console.log(`\n  ! accepted differences are recorded for ${stale.join(', ')}, which no longer differ.`);
-  console.log('    Remove them from tools/build/ACCEPTED.json.');
-}
-
-if (writeAccept) {
-  const next = {};
-  for (const [k, fp] of Object.entries(found)) {
-    next[k] = { fingerprint: fp, why: (accepted[k] || {}).why || 'TODO — say why this difference is intended' };
-  }
-  fs.writeFileSync(ACCEPTED_FILE, JSON.stringify(next, null, 1) + '\n');
-  console.log(`\nwrote ${ACCEPTED_FILE} with ${Object.keys(next).length} entr${Object.keys(next).length === 1 ? 'y' : 'ies'}.`);
-  console.log('Fill in every "why" before committing — an exemption nobody can explain is not one.');
-  process.exit(0);
-}
-
-const alsoInRepo = execFileSync('git', ['ls-tree', '--name-only', ref], { encoding: 'utf8' })
-  .split('\n').filter((f) => f.endsWith('.html'));
-const dropped = alsoInRepo.filter((f) => !built.includes(f));
-if (dropped.length) console.log(`\n  ! pages that existed at ${ref} and are not built: ${dropped.join(', ')}`);
-
-console.log(`\n${built.length} pages compared against ${ref} — ` +
-  `${built.length - differing - allowed - missing} identical, ${allowed} accepted, ` +
-  `${differing} differing, ${missing} new` +
-  (dataAccepted ? '; data/projects.js accepted' : '') +
-  (dataDiffers ? '; data/projects.js DIFFERS' : '') +
-  (dropped.length ? `, ${dropped.length} missing` : ''));
-process.exit(differing || dataDiffers || dropped.length || stale.length ? 1 : 0);
+cleanup();
+const added = built.filter((f) => !base.includes(f)).length;
+const same = built.length - differing - added;
+console.log(`\n${built.length} pages compared against ${ref} (${sha.slice(0, 7)}) — ` +
+  `${same} identical, ${differing} differing, ${added} new, ${dropped.length} gone` +
+  (dataDiffers ? '; data/projects.js differs' : '; data/projects.js identical'));
+process.exit(differing || added || dropped.length || dataDiffers ? 1 : 0);
