@@ -1,0 +1,95 @@
+{
+ "slug": "jewelry-shop",
+ "page": "jewelry-shop.html",
+ "order": 11,
+ "inGrid": false,
+ "card": {
+  "name": "Jewelry Shop",
+  "location": "Wellesley, Massachusetts",
+  "tagline": "A gym transformed into a space for making.",
+  "status": "construction",
+  "image": null,
+  "alt": "Jewelry Shop",
+  "press": null,
+  "lat": 42.297,
+  "lng": -71.29,
+  "types": [
+   "commercial",
+   "renovation"
+  ],
+  "region": "massachusetts"
+ },
+ "schema": {
+  "description": "Conversion of a former gym into a jewelry design studio in Wellesley, Massachusetts.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "Wellesley, Massachusetts"
+  },
+  "about": "Commercial Architecture, Adaptive Reuse"
+ },
+ "page_content": {
+  "title": "Jewelry Shop — Auerbach Architecture",
+  "metaDescription": "Jewelry Shop — Converted gym into a design studio in Wellesley, MA.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "Wellesley, MA",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "Under Administration",
+    "valueClasses": ""
+   },
+   {
+    "key": "Type",
+    "value": "Commercial Adaptive Reuse",
+    "valueClasses": ""
+   },
+   {
+    "key": "Program",
+    "value": "Gym converted to design studio / jewelry shop",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "A gym transformed into a space for making.",
+  "hero": {
+   "image": null,
+   "alt": "Jewelry Shop — Hero Photograph",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "wide",
+    "image": null,
+    "alt": "Jewelry Shop — Interior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": null,
+    "alt": "Jewelry Shop — Display",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": null,
+    "alt": "Jewelry Shop — Detail",
+    "focal": "50% 50%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "The Jewelry Shop project converts a former gymnasium in Wellesley into a refined design studio and retail space. The adaptive reuse preserves the generous volume of the original space while introducing new material layers that create an intimate, craft-focused environment.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The project is currently under administration.",
+    "style": ""
+   }
+  ]
+ }
+}

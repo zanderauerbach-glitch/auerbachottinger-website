@@ -1,0 +1,110 @@
+---js
+{
+  pagination: { data: "projects", size: 1, alias: "p" },
+  permalink: (data) => data.p.page,
+  eleventyExcludeFromCollections: true
+}
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NS4M89QR');</script>
+  <!-- End Google Tag Manager -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ p.page_content.title | t }}</title>
+  <meta name="description" content="{{ p.page_content.metaDescription | a }}">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+{{ p | schema }}
+  </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NS4M89QR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header>
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-brand">Auerbach Architecture</a>
+        <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="methods.html">Methods</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="journal.html">Field Notes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+<nav class="mobile-menu">
+  <a href="about.html">About</a>
+  <a href="methods.html">Methods</a>
+  <a href="runner-road.html">Runner Road</a>
+  <a href="pond-house.html">Pond House</a>
+  <a href="jericho-path.html">Jericho Path</a>
+  <a href="further-lane.html">Further Lane</a>
+  <a href="white-feather.html">White Feather</a>
+  <a href="mural-museum.html">Mural Museum</a>
+  <a href="colony-lane.html">Colony Lane</a>
+  <a href="red-coat-hill.html">Red Coat Hill</a>
+  <a href="journal.html">Field Notes</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="project-hero{% if p.page_content.hero.classes %} {{ p.page_content.hero.classes | a }}{% endif %}">{% if p.page_content.hero.image %}{{ p.page_content.hero | img }}{% else %}<div class="placeholder-img">{{ p.page_content.hero.alt | t }}</div>{% endif %}</div>
+  <div class="project-intro">
+    <div class="project-intro-inner">
+      <div>
+        <span class="label">Project Details</span>
+        <div class="divider"></div>
+        <ul class="project-meta-list">
+{%- for row in p.page_content.details %}
+          <li><span class="meta-key">{{ row.key | t }}</span><span class="meta-val{{ row.valueClasses | a }}">{{ row.value | t }}</span></li>
+{%- endfor %}
+        </ul>
+      </div>
+      <div class="project-description">
+        <h2>{{ p.page_content.heading | t }}</h2>
+{%- for b in p.page_content.body %}
+        <{{ b.tag | tag }}{% if b.style %} style="{{ b.style | a }}"{% endif %}>{{ b.text | t }}</{{ b.tag | tag }}>
+{%- endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="project-gallery">
+    <div class="gallery-grid">
+{%- for f in p.page_content.gallery %}
+      <div class="gallery-item{% if f.classes %} {{ f.classes | a }}{% endif %}">{% if f.image %}{{ f | img }}{% else %}<div class="placeholder-img">{{ f.alt | t }}</div>{% endif %}</div>
+{%- endfor %}
+    </div>
+  </div>
+
+  <section class="field-notes" id="field-notes" data-project="{{ p.slug | a }}"></section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">Auerbach Architecture</span>
+    <nav class="footer-links" aria-label="More">
+      <a href="faq.html">Frequently asked questions</a>
+    </nav>
+    <span class="footer-copy">&copy; 2026 Auerbach Architecture. All rights reserved.</span>
+  </div>
+</footer>
+<script src="data/projects.js"></script>
+<script src="data/annotations.js"></script>
+<script src="data/journal.js"></script>
+<script src="nav.js"></script>
+<script src="annotate.js"></script>
+<script src="journal.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,26 @@
+{
+ "comment": "Where the photograph libraries are. `find` names the folder to look for — the studio searches your home directory and each CloudStorage provider, so a Dropbox folder is located rather than guessed. `paths` are fallbacks, tried in order, with `~` meaning your home directory. STUDIO_LIBRARY overrides everything. Nothing here reaches the published site: tools/ is excluded from every build.",
+ "roots": [
+  {
+   "id": "shared",
+   "label": "Dropbox — Auerbach x Arlin",
+   "paths": [
+    "~/Library/CloudStorage/Dropbox/Auerbach x Arlin/Projects",
+    "~/Dropbox/Auerbach x Arlin/Projects",
+    "C:\\Users\\zande\\Dropbox\\Auerbach x Arlin\\Projects"
+   ],
+   "find": "Auerbach x Arlin",
+   "then": "Projects"
+  },
+  {
+   "id": "marketing",
+   "label": "Dropbox — marketing project images",
+   "paths": [
+    "C:\\Dropbox\\03_OPERATIONS, MKTING, BD\\MARKETING\\PROJECT IMAGES",
+    "~/Dropbox/03_OPERATIONS, MKTING, BD/MARKETING/PROJECT IMAGES"
+   ],
+   "find": "03_OPERATIONS, MKTING, BD",
+   "then": "MARKETING/PROJECT IMAGES"
+  }
+ ]
+}

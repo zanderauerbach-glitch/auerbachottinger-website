@@ -5,6 +5,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
 
+/* ============================================
+   STUDIO SETTINGS — begin
+   The shapes photographs are cropped to. Edited in the studio and written
+   here by tools/review/content.py; the markers are how it finds the block,
+   so do not remove them. Anything outside them is left alone.
+   ============================================ */
+:root {
+  --hero-desktop-height: 80vh;  /* Hero on a laptop */
+  --hero-mobile-aspect: 4 / 5;  /* Hero on a phone */
+  --frame-mobile-aspect: 4 / 3;  /* Gallery frames on a phone */
+}
+/* STUDIO SETTINGS — end */
+
 /* ---- Reset & Base ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -472,7 +485,7 @@ main { padding-top: 60px; }
 
 /* ---- Project Page ---- */
 .project-hero {
-  height: 80vh;
+  height: var(--hero-desktop-height, 80vh);
   min-height: 420px;
   position: relative;
   overflow: hidden;
@@ -1014,6 +1027,19 @@ footer {
   color: #aaa;
   letter-spacing: 0.08em;
 }
+/* Pages that matter but do not belong in the top nav. The FAQ lives here:
+   it carries the FAQPage schema that search engines and answer engines
+   read, so it has to stay linked from every page, just not shouted about. */
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a {
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+  border-bottom: 1px solid #c8c2b8;
+  padding-bottom: 1px;
+}
+.footer-links a:hover { color: #1c1c1c; border-color: #1c1c1c; }
 
 /* ---- Utilities ---- */
 .text-center { text-align: center; }
@@ -1129,11 +1155,502 @@ footer {
   .nav-toggle { display: flex; }
   .project-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; padding: 0 1.5rem; }
-  .gallery-grid .gallery-item.wide { grid-column: span 1; aspect-ratio: 4/3; }
-  .gallery-grid .gallery-item.wide.taller { aspect-ratio: 4/3; }
-  .gallery-grid .gallery-item.large { grid-column: span 1; aspect-ratio: 4/3; }
+  .project-hero { height: auto; min-height: 0; aspect-ratio: var(--hero-mobile-aspect, 4 / 5); }
+  .gallery-grid .gallery-item { aspect-ratio: var(--frame-mobile-aspect, 4 / 3); }
+  .gallery-grid .gallery-item.wide { grid-column: span 1; aspect-ratio: var(--frame-mobile-aspect, 4 / 3); }
+  .gallery-grid .gallery-item.wide.taller { aspect-ratio: var(--frame-mobile-aspect, 4 / 3); }
+  .gallery-grid .gallery-item.large { grid-column: span 1; aspect-ratio: var(--frame-mobile-aspect, 4 / 3); }
   .section-inner, .about-hero-inner, .contact-inner, .footer-inner { padding: 0 1.5rem; }
   .project-intro-inner { padding: 0 1.5rem; }
   .hero-content { padding: 2rem 1.5rem; }
   .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+/* ============================================
+   ADDITIONS (2026-09-20)
+   Map, project filters, architect's notes,
+   field notes feed. Everything below reuses
+   the palette above: #1c1c1c, #c8c2b8, #faf8f6.
+   ============================================ */
+
+/* ---- Page intro (map, field notes) ---- */
+.page-intro {
+  padding: 6rem 0 3.5rem;
+  background: #faf8f6;
+  border-bottom: 1px solid #ebebeb;
+}
+.page-intro h1 { max-width: 760px; margin-bottom: 1.5rem; }
+.page-intro p { max-width: 600px; }
+
+/* ---- Filter bar (home grid + field notes) ---- */
+/* The chips are closed until the Filter button opens them. `hidden` alone
+   loses to the display rule below, so it has to be spelled out. */
+.filter-bar[hidden] { display: none !important; }
+.filter-reset[hidden], .filter-sep[hidden] { display: none !important; }
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  align-items: center;
+}
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.5rem;
+  padding: 0.5rem 0;
+}
+.filter-group + .filter-group { border-top: 1px solid #f0f0f0; }
+.filter-group .label { margin-right: 0.75rem; min-width: 60px; }
+.filter-chip {
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  padding: 0.35rem 0.5rem 0.25rem;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #888;
+  transition: color 0.2s, border-color 0.2s;
+}
+.filter-chip:hover { color: #1c1c1c; }
+.filter-chip.active { color: #1c1c1c; border-bottom-color: #1c1c1c; }
+.filter-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0 2rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+.filter-reset,
+.filter-toggle {
+  background: none; border: none; cursor: pointer;
+  font: inherit; letter-spacing: inherit; text-transform: inherit;
+  color: #888; border-bottom: 1px solid #c8c2b8; padding-bottom: 1px;
+}
+.filter-reset:hover,
+.filter-toggle:hover,
+.filter-toggle[aria-expanded="true"] { color: #1c1c1c; }
+.filter-empty {
+  padding: 4rem 0;
+  text-align: center;
+  color: #999;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+.project-card.is-hidden { display: none; }
+.project-filters { margin-bottom: 0.5rem; }
+.project-filters .section-header { margin-bottom: 1.5rem; }
+
+/* ---- Map page ---- */
+.map-views {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 2rem;
+}
+.map-view {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #666;
+  transition: all 0.2s;
+}
+.map-view:hover { border-color: #1c1c1c; color: #1c1c1c; }
+.map-view.active { background: #1c1c1c; border-color: #1c1c1c; color: #fff; }
+
+.map-wrap { position: relative; border-bottom: 1px solid #ebebeb; }
+#project-map {
+  height: 72vh;
+  min-height: 480px;
+  background: #f3f1ee;
+  z-index: 0;
+}
+.map-legend {
+  position: absolute;
+  left: 3rem;
+  bottom: 2rem;
+  z-index: 500;
+  display: flex;
+  gap: 1.25rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid #ebebeb;
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #666;
+}
+.map-legend span { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+.aa-marker {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.15);
+}
+.aa-marker-wrap { background: none; border: none; }
+/* An office: square and dark, so it never reads as one of the project dots. */
+.aa-office {
+  display: inline-block;
+  width: 10px; height: 10px;
+  background: #1c1c1c;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.18);
+}
+.aa-office-wrap { background: none; border: none; }
+.aa-office-wrap .aa-office { position: absolute; left: 1px; top: 1px; }
+.aa-office-label { color: #1c1c1c; font-weight: 600; }
+.aa-marker-wrap .aa-marker { position: absolute; left: 1px; top: 1px; }
+.aa-marker-label {
+  position: absolute;
+  left: 18px; top: -3px;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #3a3a3a;
+  /* A solid ring before the soft glow. The glow alone lost to the basemap's
+     own place names — GOODSILL CARPORT sat inside "Sacramento" and both
+     became unreadable. */
+  text-shadow:
+    1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff,
+    1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff,
+    0 0 4px #fff, 0 0 8px #fff;
+  pointer-events: none;
+}
+
+/* Set by map.js when this name would print on top of one already placed. */
+.aa-marker-label.is-crowded { visibility: hidden; }
+/* The other spots map.js tries before hiding a name. The dot is 12px square;
+   these keep the same 18px / 6px clearance the default right-hand spot has. */
+.aa-marker-label.at-left  { left: auto; right: 18px; }
+.aa-marker-label.at-below { left: 6px; top: 16px; transform: translateX(-50%); }
+.aa-marker-label.at-above { left: 6px; top: -20px; transform: translateX(-50%); }
+
+/* Leaflet chrome, quieted */
+.leaflet-container { font-family: 'Inter', sans-serif; }
+.leaflet-bar { border: 1px solid #ddd !important; box-shadow: none !important; border-radius: 0 !important; }
+.leaflet-bar a { color: #1c1c1c !important; border-radius: 0 !important; }
+.leaflet-control-attribution { font-size: 0.55rem !important; color: #999 !important; background: rgba(255,255,255,0.8) !important; }
+.leaflet-control-attribution a { color: #888 !important; }
+.leaflet-popup-content-wrapper { border-radius: 0 !important; box-shadow: 0 6px 24px rgba(0,0,0,0.12) !important; padding: 0 !important; }
+.leaflet-popup-content { margin: 0 !important; width: 260px !important; }
+.leaflet-popup-tip-container { display: none; }
+.aa-popup { padding: 0 0 1rem; }
+.aa-popup-img { display: block; aspect-ratio: 4/3; overflow: hidden; margin-bottom: 0.9rem; }
+.aa-popup .label { display: block; padding: 0 1rem; margin-bottom: 0.2rem; font-size: 0.55rem; }
+.aa-popup h3 { padding: 0 1rem; font-size: 1.15rem; margin-bottom: 0.4rem; }
+.aa-popup .status {
+  display: inline-flex; align-items: center; gap: 0.4rem; margin: 0 1rem 0.6rem;
+  font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase;
+}
+.aa-popup .status::before { content: ''; width: 5px; height: 5px; border-radius: 50%; }
+.aa-popup .status-complete { color: #5c7a5c; } .aa-popup .status-complete::before { background: #5c7a5c; }
+.aa-popup .status-construction { color: #a06a20; } .aa-popup .status-construction::before { background: #a06a20; }
+.aa-popup .status-design { color: #3d6080; } .aa-popup .status-design::before { background: #3d6080; }
+.aa-popup p { padding: 0 1rem; font-size: 0.78rem; line-height: 1.6; color: #555; margin-bottom: 0.75rem; }
+.aa-popup-link {
+  display: inline-block; margin: 0 1rem;
+  font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
+  border-bottom: 1px solid #1c1c1c; padding-bottom: 2px;
+}
+
+.map-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+.map-list-region .label { display: block; margin-bottom: 0.75rem; }
+.map-list ul { list-style: none; }
+.map-list li { border-top: 1px solid #f0f0f0; }
+.map-list li:last-child { border-bottom: 1px solid #f0f0f0; }
+.map-list-item {
+  width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+  display: grid; grid-template-columns: 14px 1fr; column-gap: 0.75rem; align-items: center;
+  padding: 0.7rem 0; font-family: inherit;
+}
+.map-list-item:hover .map-list-name { text-decoration: underline; text-underline-offset: 3px; }
+.map-list-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #1c1c1c; }
+.map-list-loc { grid-column: 2; font-size: 0.68rem; color: #999; letter-spacing: 0.06em; }
+
+/* ---- Architect's notes (annotations) ---- */
+.has-notes { position: relative; }
+.anno-layer { position: absolute; inset: 0; pointer-events: none; }
+.notes-on .anno-layer { pointer-events: auto; }
+
+/* ---- Drawn notes (Zander's tablet markup) ---- */
+.anno-ink {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+  pointer-events: none;
+}
+.anno-ink img {
+  width: 100%; height: 100%;
+  display: block;
+  /* object-fit and object-position are set in annotate.js to whatever the
+     photograph underneath is using, so the ink crops with it. */
+  /* A whiteboard pen is made for a white board. Over a photograph that runs
+     from bright sky to dark interior, the ink needs its own edge to survive. */
+  filter: drop-shadow(0 0 2px rgba(255,255,255,0.9))
+          drop-shadow(0 0 6px rgba(255,255,255,0.6))
+          drop-shadow(0 1px 3px rgba(0,0,0,0.28));
+}
+.notes-on .anno-ink { opacity: 1; }
+
+/* A drawn-on photograph is never cropped. Zander draws on the whole frame,
+   and a tile that trims it to a band cuts the ends off his notes — the
+   registration stays correct, but half a sentence is still half a sentence.
+   So an annotated tile takes the photograph's own proportions instead of
+   the grid's. Both layers then share one box and line up exactly. */
+/* Specificity has to clear .gallery-grid .gallery-item.wide.taller, which is
+   four classes deep, or the tile keeps its band ratio and clips the drawing. */
+.gallery-grid .gallery-item.has-ink,
+.gallery-grid .gallery-item.wide.has-ink,
+.gallery-grid .gallery-item.wide.taller.has-ink {
+  aspect-ratio: auto;
+  overflow: visible;
+}
+.gallery-grid .gallery-item.has-ink > img,
+.gallery-grid .gallery-item.wide.taller.has-ink > img,
+.gallery-item.has-ink .anno-ink img {
+  height: auto;
+  object-fit: fill;
+  object-position: 50% 50%;
+}
+.project-hero.has-ink { height: auto; min-height: 0; }
+.project-hero.has-ink > img,
+.project-hero.has-ink .anno-ink img { height: auto; }
+
+/* The photograph settles back while the notes are up, the way the lights
+   come down in a gallery. It reads as a change of mode and it stops the
+   photograph competing with the drawing. */
+.anno-scrim {
+  position: absolute; inset: 0;
+  background: #1c1c1c;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+  pointer-events: none;
+}
+.notes-on .has-ink .anno-scrim { opacity: 0.2; }
+.has-ink > img { transition: filter 0.55s ease; }
+.notes-on .has-ink > img { filter: saturate(0.6) contrast(0.97); }
+
+@media (prefers-reduced-motion: reduce) {
+  .anno-ink, .anno-scrim, .has-ink > img { transition: none; }
+}
+.anno-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.9);
+  background: rgba(28,28,28,0.78);
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.35s, transform 0.2s;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+.anno-pin::after {
+  content: '';
+  position: absolute; inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.45);
+  animation: anno-pulse 2.4s ease-out infinite;
+}
+@keyframes anno-pulse {
+  0% { transform: scale(0.7); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+.notes-on .anno-pin { opacity: 1; }
+.anno-pin:hover, .anno-pin.open { transform: translate(-50%, -50%) scale(1.1); background: #1c1c1c; }
+.anno-pin.open::after { animation: none; opacity: 0; }
+.anno-num { display: block; line-height: 24px; }
+.anno-note {
+  position: absolute;
+  left: 20px; top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  padding: 0.85rem 1rem;
+  background: rgba(255,255,255,0.97);
+  color: #1c1c1c;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 0.74rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  border-left: 2px solid #c8c2b8;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+  z-index: 5;
+}
+.anno-note-left { left: auto; right: 20px; }
+.anno-note-up { top: auto; bottom: 0; transform: none; }
+.anno-pin:hover .anno-note, .anno-pin.open .anno-note { opacity: 1; visibility: visible; }
+
+.anno-toggle {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1rem;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #555;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  transition: border-color 0.2s, color 0.2s;
+}
+.anno-toggle:hover { border-color: #1c1c1c; color: #1c1c1c; }
+.anno-toggle-dot {
+  width: 24px; height: 12px; border-radius: 6px;
+  background: #ddd; position: relative; transition: background 0.2s;
+}
+.anno-toggle-dot::after {
+  content: ''; position: absolute; top: 2px; left: 2px;
+  width: 8px; height: 8px; border-radius: 50%; background: #fff; transition: left 0.2s;
+}
+.anno-toggle[aria-pressed="true"] { border-color: #1c1c1c; color: #1c1c1c; }
+.anno-toggle[aria-pressed="true"] .anno-toggle-dot { background: #1c1c1c; }
+.anno-toggle[aria-pressed="true"] .anno-toggle-dot::after { left: 14px; }
+.anno-toggle-state { color: #aaa; }
+.anno-toggle[aria-pressed="true"] .anno-toggle-state { color: #5c7a5c; }
+
+/* ---- Field notes feed ---- */
+.journal-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 3rem;
+}
+.journal-project-label { display: flex; flex-direction: column; gap: 0.4rem; }
+.journal-project-label select {
+  border: none; border-bottom: 1px solid #c8c2b8; background: transparent;
+  padding: 0.4rem 1.5rem 0.4rem 0; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 300;
+  color: #1c1c1c; outline: none; cursor: pointer; border-radius: 0; -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23888' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0.25rem center;
+}
+.fn-list { max-width: 720px; }
+.fn-entry {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #ebebeb;
+}
+.fn-entry:first-child { padding-top: 0; }
+.fn-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: #999;
+}
+.fn-meta time { color: #666; }
+.fn-cat { position: relative; padding-left: 0.9rem; }
+.fn-cat::before { content: ''; position: absolute; left: 0; top: 50%; width: 5px; height: 5px; border-radius: 50%; transform: translateY(-50%); background: #c8c2b8; }
+.fn-update .fn-cat::before { background: #a06a20; }
+.fn-observation .fn-cat::before { background: #5c7a5c; }
+.fn-critique .fn-cat::before { background: #7a4a4a; }
+.fn-philosophy .fn-cat::before { background: #3d6080; }
+.fn-project { color: #1c1c1c; border-bottom: 1px solid #c8c2b8; padding-bottom: 1px; }
+.fn-general { color: #aaa; border: none; }
+.fn-draft { color: #b08a3a; border: 1px solid #e5d7b5; padding: 0.1rem 0.4rem; font-size: 0.52rem; }
+.fn-title { font-size: 1.5rem; margin-bottom: 1rem; }
+.fn-image { aspect-ratio: 16/9; overflow: hidden; margin-bottom: 1.25rem; background: #e0dcd6; }
+.fn-body p { margin-bottom: 0.9rem; }
+.fn-body p:last-child { margin-bottom: 0; }
+.fn-empty { color: #999; font-style: italic; }
+.fn-more {
+  display: inline-block; margin-top: 2rem;
+  font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+  border-bottom: 1px solid #1c1c1c; padding-bottom: 2px;
+}
+
+/* "From the field" on project pages */
+.field-notes { padding: 5rem 0; border-top: 1px solid #ebebeb; background: #faf8f6; }
+.field-notes .section-header { margin-bottom: 2rem; }
+.field-notes .section-header h2 { margin-top: 0.5rem; }
+.field-notes .fn-entry:first-child { padding-top: 0; }
+.field-notes .fn-entry:last-child { border-bottom: none; }
+
+/* ---- Responsive for additions ---- */
+@media (max-width: 960px) {
+  .map-list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .page-intro { padding: 4rem 0 2.5rem; }
+  .map-legend { left: 1.5rem; bottom: 1.5rem; gap: 0.75rem; padding: 0.5rem 0.75rem; }
+  .map-list { grid-template-columns: 1fr; gap: 2rem; }
+  #project-map { height: 60vh; min-height: 380px; }
+  .aa-marker-label { display: none; }
+  .anno-note { width: 200px; }
+  .anno-toggle { right: 1rem; bottom: 1rem; }
+  .filter-group .label { min-width: 0; width: 100%; margin-bottom: 0.25rem; }
+  .map-views { flex-wrap: wrap; }
+}
+
+/* With seven nav links, switch to the menu button a little earlier */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+}
+
+/* Unpublished drafts — only ever visible to a reviewer who asked for them
+   with ?drafts=1, never to a visitor. */
+.fn-draftbar {
+  background: #f7ecdd;
+  color: #1c1c1c;
+  border-bottom: 1px solid #b07a3c;
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 0.6rem 16px;
+}
+.fn-draftbar a { color: #1c1c1c; }
+.fn-draftnote {
+  color: #8a8378;
+  font-size: 0.86em;
+}
+.anno-draft {
+  display: inline-block;
+  margin-right: 0.45em;
+  padding: 0.1em 0.35em;
+  border: 1px solid #d8b78e;
+  border-radius: 2px;
+  color: #a8703a;
+  font-size: 0.62em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  vertical-align: 0.12em;
 }

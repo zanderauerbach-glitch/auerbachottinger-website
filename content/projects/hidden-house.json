@@ -1,0 +1,89 @@
+{
+ "slug": "hidden-house",
+ "page": "hidden-house.html",
+ "order": 10,
+ "inGrid": true,
+ "card": {
+  "name": "Hidden House",
+  "location": "Martha's Vineyard",
+  "tagline": "A home that belongs to the woods.",
+  "status": "design",
+  "image": "images/hero/hero-8.jpg",
+  "alt": "Hidden House",
+  "press": null,
+  "lat": 41.4,
+  "lng": -70.6,
+  "types": [
+   "residential"
+  ],
+  "region": "vineyard"
+ },
+ "schema": {
+  "description": "A woodland residence on Martha's Vineyard, currently in progress.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "Martha's Vineyard, Massachusetts"
+  },
+  "about": "Residential Architecture"
+ },
+ "page_content": {
+  "title": "Hidden House — Auerbach Architecture",
+  "metaDescription": "Hidden House — A woodland residence on Martha's Vineyard, currently in progress.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "Martha's Vineyard",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "In Design",
+    "valueClasses": " status-design"
+   },
+   {
+    "key": "Setting",
+    "value": "Woodland",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "A home that belongs to the woods.",
+  "hero": {
+   "image": "images/hero/hero-8.jpg",
+   "alt": "Hidden House — Martha's Vineyard",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "wide",
+    "image": "images/projects/hidden-house-hero.jpg",
+    "alt": "Hidden House — Exterior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/hidden-house-01.jpg",
+    "alt": "Hidden House — Path Interior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/hidden-house-02.jpg",
+    "alt": "Hidden House — Interior Detail",
+    "focal": "50% 50%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "Hidden House is a woodland residence on Martha's Vineyard, designed to sit within — rather than against — its forested setting. The design responds to the existing tree canopy, topography, and filtered light of the site.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The project is currently in progress. Further details to follow.",
+    "style": ""
+   }
+  ]
+ }
+}

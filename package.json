@@ -1,0 +1,36 @@
+{
+  "name": "auerbacharchitecture",
+  "version": "1.0.0",
+  "description": "Auerbach Architecture — auerbacharchitecture.com. Project pages are built from content/projects/*.json.",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "lint": "node tools/build/lint-templates.js",
+    "compare": "node tools/build/compare.js",
+    "studio": "node tools/studio/server.js",
+    "studio:test": "node tools/studio/test.js",
+    "doccheck": "node tools/build/check-scripts.js",
+    "check": "npm run lint && npm run doccheck && npm run build && npm run compare",
+    "studio:tags": "node tools/studio/import-tags.js",
+    "studio:scan": "node tools/studio/scan.js",
+    "compare:accept": "node tools/build/compare.js --accept",
+    "filters:test": "node tools/build/test-filters.js",
+    "map:test": "node tools/build/test-map.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zanderauerbach-glitch/auerbachottinger-website.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zanderauerbach-glitch/auerbachottinger-website/issues"
+  },
+  "homepage": "https://auerbacharchitecture.com",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "linkedom": "^0.18.13",
+    "playwright": "^1.63.0",
+    "sharp": "^0.35.4"
+  },
+  "private": true
+}

@@ -1,0 +1,131 @@
+{
+ "slug": "carriage-house",
+ "page": "carriage-house.html",
+ "order": 8,
+ "inGrid": true,
+ "card": {
+  "name": "Carriage House",
+  "location": "Brookline, Massachusetts",
+  "tagline": "Restoring nearly two centuries of craft in Brookline.",
+  "status": "complete",
+  "image": "images/projects/carriage-house-hero.jpg",
+  "alt": "Carriage House",
+  "press": null,
+  "lat": 42.33,
+  "lng": -71.12,
+  "types": [
+   "residential",
+   "preservation",
+   "renovation"
+  ],
+  "region": "massachusetts"
+ },
+ "schema": {
+  "description": "Restoration and adaptive reuse of an 1840s carriage house structure in Brookline, Massachusetts.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "Brookline, Massachusetts"
+  },
+  "about": "Historic Preservation, Residential Architecture"
+ },
+ "page_content": {
+  "title": "Carriage House — Auerbach Architecture",
+  "metaDescription": "Carriage House — Restoration of an 1840s structure in Brookline, MA.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "Brookline, MA",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "Complete",
+    "valueClasses": " status-complete"
+   },
+   {
+    "key": "Type",
+    "value": "Historic Restoration",
+    "valueClasses": ""
+   },
+   {
+    "key": "Built",
+    "value": "Original structure, c. 1840s",
+    "valueClasses": ""
+   },
+   {
+    "key": "Credit",
+    "value": "With Maryann Thompson Architects",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "Restoring nearly two centuries of craft in Brookline.",
+  "hero": {
+   "image": "images/projects/carriage-house-hero.jpg",
+   "alt": "Carriage House — Brookline, MA",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "wide",
+    "image": "images/projects/carriage-house-01.jpg",
+    "alt": "Carriage House — Exterior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/carriage-house-02.jpg",
+    "alt": "Carriage House — Interior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/carriage-house-03.jpg",
+    "alt": "Carriage House — Detail",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/carriage-house-04.jpg",
+    "alt": "Carriage House — Interior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/carriage-house-05.jpg",
+    "alt": "Carriage House — Detail",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/carriage-house-06.jpg",
+    "alt": "Carriage House — Detail",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/carriage-house-07.jpg",
+    "alt": "Carriage House — Interior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/carriage-house-08.jpg",
+    "alt": "Carriage House — Exterior",
+    "focal": "50% 50%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "Carriage House is the careful restoration of an 1840s structure in Brookline, Massachusetts. The project navigates the demands of historic preservation and contemporary use — preserving the character and material authenticity of the original building while accommodating the needs of modern habitation.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "Rehabilitated from an early Boston merchant's estate, the building found new life as an in-law suite, gym, pool house, and playhouse for the owners' daughters. The renovation honors the vernacular of historic New England while playfully pushing the boundaries of more contemporary design.",
+    "style": ""
+   }
+  ]
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "slug": "white-feather",
+ "page": "white-feather.html",
+ "order": 4,
+ "inGrid": true,
+ "card": {
+  "name": "White Feather",
+  "location": "Joshua Tree, California",
+  "tagline": "Three bedrooms, a desert's worth of sky.",
+  "status": "complete",
+  "image": "images/projects/white-feather-hero.jpg",
+  "alt": "White Feather",
+  "press": null,
+  "lat": 34.135,
+  "lng": -116.31,
+  "types": [
+   "residential"
+  ],
+  "region": "california"
+ },
+ "schema": {
+  "description": "A compact, material-conscious residence adjacent to Joshua Tree National Park, California.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "Joshua Tree, California"
+  },
+  "about": "Residential Architecture"
+ },
+ "page_content": {
+  "title": "White Feather — Auerbach Architecture",
+  "metaDescription": "White Feather — A compact, material-conscious residence adjacent to Joshua Tree National Park, Joshua Tree, California.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "Joshua Tree, California",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "Complete",
+    "valueClasses": " status-complete"
+   },
+   {
+    "key": "Program",
+    "value": "3-bedroom residential",
+    "valueClasses": ""
+   },
+   {
+    "key": "Setting",
+    "value": "Adjacent to Joshua Tree National Park",
+    "valueClasses": ""
+   },
+   {
+    "key": "Materials",
+    "value": "Salvaged siding and structural elements",
+    "valueClasses": ""
+   },
+   {
+    "key": "Design",
+    "value": "Rodrigo Novelo Pastrana",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "Three bedrooms, a desert's worth of sky.",
+  "hero": {
+   "image": "images/projects/white-feather-hero.jpg",
+   "alt": "White Feather — Joshua Tree, California",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "wide",
+    "image": "images/projects/white-feather-01.jpg",
+    "alt": "White Feather — Exterior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/white-feather-02.jpg",
+    "alt": "White Feather — View",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/white-feather-03.jpg",
+    "alt": "White Feather — Detail",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/white-feather-04.jpg",
+    "alt": "White Feather — Interior",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/white-feather-05.jpg",
+    "alt": "White Feather — Landscape",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/white-feather-06.jpg",
+    "alt": "White Feather — Materials",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/white-feather-07.jpg",
+    "alt": "White Feather — Setting",
+    "focal": "50% 50%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "White Feather fits three bedrooms into a tightly restricted and monitored building envelope adjacent to Joshua Tree National Park. The project's constraints became its defining logic: a compact, efficient plan that treads lightly on the high desert landscape.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "Construction materials emphasize recycling and reuse throughout. Siding and structural elements were salvaged from a dilapidated local structure, allowing significant materials in good condition to find a second life — reducing waste and embedding a sense of history into the new building.",
+    "style": ""
+   }
+  ]
+ }
+}

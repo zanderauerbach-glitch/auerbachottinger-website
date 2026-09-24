@@ -1,0 +1,148 @@
+{
+ "slug": "pennywise-path",
+ "page": "pennywise-path.html",
+ "order": 13,
+ "inGrid": true,
+ "card": {
+  "name": "Pennywise Path",
+  "location": "Edgartown, Martha's Vineyard",
+  "tagline": "The party is at the back.",
+  "status": "construction",
+  "image": "images/projects/pennywise-path-hero.jpg",
+  "alt": "Pennywise Path — the house in the tree canopy",
+  "press": null,
+  "lat": 41.372,
+  "lng": -70.535,
+  "types": [
+   "residential"
+  ],
+  "region": "vineyard"
+ },
+ "schema": {
+  "description": "A new single-family house on the sand plain near Edgartown, Martha's Vineyard, currently in construction, by Auerbach Architecture.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "Edgartown, Martha's Vineyard, Massachusetts"
+  },
+  "about": "Residential Architecture"
+ },
+ "page_content": {
+  "title": "Pennywise Path — Auerbach Architecture",
+  "metaDescription": "Pennywise Path — A new cedar-clad house on the sand plain near Edgartown, Martha's Vineyard, in construction with Auerbach Architecture.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "Edgartown, Martha's Vineyard",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "In Construction",
+    "valueClasses": " status-construction"
+   },
+   {
+    "key": "Type",
+    "value": "New Construction",
+    "valueClasses": ""
+   },
+   {
+    "key": "Setting",
+    "value": "Sand plain, wetland edge",
+    "valueClasses": ""
+   },
+   {
+    "key": "Materials",
+    "value": "Clear cedar, copper, white oak, soapstone",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "The party is at the back.",
+  "hero": {
+   "image": "images/projects/pennywise-path-hero.jpg",
+   "alt": "Pennywise Path — the house set into the oak canopy, seen from the air",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "wide",
+    "image": "images/projects/pennywise-path-01.jpg",
+    "alt": "Pennywise Path — the cedar elevation and the cantilevered balcony above the deck",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/pennywise-path-02.jpg",
+    "alt": "Pennywise Path — scaffold towers standing to the boarded ceiling of the double-height room",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/pennywise-path-03.jpg",
+    "alt": "Pennywise Path — the rooms in line, each opening onto the next, with the walls newly closed in",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/pennywise-path-04.jpg",
+    "alt": "Pennywise Path — the ridge of the boarded ceiling, seen from a scaffold plank during the fit-out",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/pennywise-path-05.jpg",
+    "alt": "Pennywise Path — plumbing roughed into a stud bay, mineral wool packed behind it",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/pennywise-path-06.jpg",
+    "alt": "Pennywise Path — the covered end of the deck, looking out through the cable rail",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/pennywise-path-07.jpg",
+    "alt": "Pennywise Path — the clearing south of the house, and the water beyond",
+    "focal": "50% 50%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "Pennywise Path is a new house near Edgartown, on a long lot off a quiet road. The ground is sand plain, so the trees stay low, and there are wetlands to the south. When we first saw it the lot was overgrown with vines and felt hemmed in. The owner saw what it could be before we did.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "From the road it looks like a workshop: one floor over a shop, cedar siding, not much to look at. That was deliberate, and it suits the owner. The party is at the back. The biggest window and the open part of the plan face the rear, and the house hides them until you walk around it.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The septic and the well set the layout. The septic went as close to the road as possible, in the corner farthest from the wetlands, with a tank that removes nitrogen. The well went as far from both as it could. Setbacks, a cap on square footage and the Conservation Commission put a jog in the north side. The deck has no full foundation, so it doesn't count as building into the wetland buffer, and when the owner asked for it ten feet deeper, we went back to the Commission and got that approved too.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "Inside, the entry is tight on purpose and the rooms get bigger as you go, each a different size from the last. The office and the mudroom share one plan, turned ninety degrees. The kitchen uses the same proportions and opens at one end into a square room, which is the shape that makes a space feel largest. The clerestory windows are set at the height of the tree canopy. That's the part we're happiest with: you look out, and you also look up into the trees.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "We kept drawing the house smaller and the owner kept pushing for bigger. Standing in it now, the owner was right.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "Outside it's clear cedar, left to weather, with copper and black windows. We don't usually like black — we'd use a blue so dark it reads as black — but against bare cedar and copper it works. Inside, white oak runs through every doorway and the walls are a blue pale enough to pass for white. The window casings came out heavier than drawn, so the baseboards went up to match. We built four mock-ups of the trim for one window before we settled it.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The upstairs bath has a stone wall laid horizontally so the seams line up with the ceiling. The counters are black soapstone and the kitchen backsplash runs to the ceiling. Outside there's a grill near the kitchen, an outdoor shower for the sand, and raised garden beds where you arrive. The trees stay, and the house still gets plenty of sun.",
+    "style": ""
+   }
+  ]
+ }
+}

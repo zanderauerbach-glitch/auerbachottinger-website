@@ -1,0 +1,106 @@
+{
+ "about.html": {
+  "fingerprint": "0ddddbb2d4dc2bed",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Navigation only: Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide."
+ },
+ "carriage-house.html": {
+  "fingerprint": "a0930a824ac1105e",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ },
+ "colony-lane.html": {
+  "fingerprint": "82ed0a31ab56ab0c",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ },
+ "contact.html": {
+  "fingerprint": "c437e3313c763d49",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds a \"Questions\" line pointing to the FAQ. The estimate form, its formsubmit address and the office details are unchanged."
+ },
+ "faq.html": {
+  "fingerprint": "0ddddbb2d4dc2bed",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Navigation only: Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide."
+ },
+ "further-lane.html": {
+  "fingerprint": "ccb8d6fc13a160ad",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ },
+ "hamptons-architect.html": {
+  "fingerprint": "0ddddbb2d4dc2bed",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Navigation only: Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide."
+ },
+ "hidden-house.html": {
+  "fingerprint": "341c04fc9167c3b6",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ },
+ "historic-preservation.html": {
+  "fingerprint": "0ddddbb2d4dc2bed",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Navigation only: Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide."
+ },
+ "index.html": {
+  "fingerprint": "f45aac24b9453624",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. The project grid is now generated from content/projects/*.json: every card carries type, status and region data for the new filter bar (Filter, See the map), and the grid adds Carriage House, Tisbury, Hidden House, Caleb's Pond House, Pennywise Path and Goodsill Carport."
+ },
+ "interior-design.html": {
+  "fingerprint": "0ddddbb2d4dc2bed",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Navigation only: Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide."
+ },
+ "jericho-path.html": {
+  "fingerprint": "15a5fa8de306e98b",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ },
+ "jewelry-shop.html": {
+  "fingerprint": "0331739a78e55741",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ },
+ "marthas-vineyard-architect.html": {
+  "fingerprint": "0ddddbb2d4dc2bed",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Navigation only: Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide."
+ },
+ "meadowlark.html": {
+  "fingerprint": "42e236edb45467ef",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ },
+ "methods.html": {
+  "fingerprint": "8c91b84eb6ca80f0",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds one sentence pointing to the FAQ for fees, timelines and how a project runs."
+ },
+ "mural-museum.html": {
+  "fingerprint": "f8cdd9f1ec9e049e",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ },
+ "pond-house.html": {
+  "fingerprint": "7f87788a4d1d30fa",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ },
+ "red-coat-hill.html": {
+  "fingerprint": "7f0562eb9513cb1f",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ },
+ "renovation-addition.html": {
+  "fingerprint": "0ddddbb2d4dc2bed",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Navigation only: Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide."
+ },
+ "residential-architecture.html": {
+  "fingerprint": "0ddddbb2d4dc2bed",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Navigation only: Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide."
+ },
+ "runner-road.html": {
+  "fingerprint": "7ee989d72bb2054a",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ },
+ "sustainable-architecture.html": {
+  "fingerprint": "0ddddbb2d4dc2bed",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Navigation only: Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide."
+ },
+ "thank-you.html": {
+  "fingerprint": "09656b2b2d7a287e",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Navigation only: Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide."
+ },
+ "tisbury.html": {
+  "fingerprint": "9e8cd252b069d0c7",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). Fixes two broken images: the live page asks for tisbury-hero.png and tisbury-04.png, which do not exist; the files are .jpg."
+ },
+ "white-feather.html": {
+  "fingerprint": "01eed6716af0c4b6",
+  "why": "The baseline is the live site as it stood before this migration (master 4cab4cc). Field Notes (journal.html) is in the top nav and the mobile menu where FAQ was; FAQ moved to a footer link on every page, so the FAQPage schema stays linked sitewide. Adds the Field Notes section and the scripts behind it (data/projects.js, data/annotations.js, data/journal.js, annotate.js, journal.js). The gallery and copy are unchanged."
+ }
+}

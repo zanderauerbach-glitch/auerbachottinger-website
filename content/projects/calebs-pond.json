@@ -1,0 +1,154 @@
+{
+ "slug": "calebs-pond",
+ "page": "calebs-pond.html",
+ "order": 12,
+ "inGrid": true,
+ "card": {
+  "name": "Caleb's Pond House",
+  "location": "Chappaquiddick, Edgartown, Martha's Vineyard",
+  "tagline": "Three small changes to a 1990 timber-frame house.",
+  "status": "construction",
+  "image": "images/projects/calebs-pond-hero.jpg",
+  "alt": "Caleb's Pond House — the shingled house and its deck, set in the oaks above the pond",
+  "press": null,
+  "lat": 41.386,
+  "lng": -70.487,
+  "types": [
+   "residential",
+   "renovation"
+  ],
+  "region": "vineyard"
+ },
+ "schema": {
+  "description": "A 1990 timber-frame house on Chappaquiddick, Martha's Vineyard, renovated in phases for a three-generation family by Auerbach Architecture.",
+  "locationCreated": {
+   "@type": "Place",
+   "name": "Chappaquiddick, Edgartown, Martha's Vineyard, Massachusetts"
+  },
+  "about": "Residential Architecture"
+ },
+ "page_content": {
+  "title": "Caleb's Pond House — Auerbach Architecture",
+  "metaDescription": "Caleb's Pond House — A 1990 timber-frame house on Chappaquiddick, Martha's Vineyard, renovated for three generations by Auerbach Architecture.",
+  "details": [
+   {
+    "key": "Location",
+    "value": "Chappaquiddick, Edgartown, Martha's Vineyard",
+    "valueClasses": ""
+   },
+   {
+    "key": "Status",
+    "value": "In Construction",
+    "valueClasses": " status-construction"
+   },
+   {
+    "key": "Type",
+    "value": "Renovation & Addition",
+    "valueClasses": ""
+   },
+   {
+    "key": "Original Building",
+    "value": "Timber-frame house, 1990",
+    "valueClasses": ""
+   },
+   {
+    "key": "Setting",
+    "value": "Pond edge, marsh and oak",
+    "valueClasses": ""
+   },
+   {
+    "key": "Materials",
+    "value": "Pine, oak, cedar, mahogany; plaster",
+    "valueClasses": ""
+   }
+  ],
+  "heading": "Three small changes to a 1990 timber-frame house.",
+  "hero": {
+   "image": "images/projects/calebs-pond-hero.jpg",
+   "alt": "Caleb's Pond House — the shingled house and its deck, set in the oaks above the pond",
+   "focal": "50% 50%",
+   "classes": ""
+  },
+  "gallery": [
+   {
+    "classes": "wide",
+    "image": "images/projects/calebs-pond-01.jpg",
+    "alt": "Caleb's Pond House — the entry front, with the new cedar porch going up over the door",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/calebs-pond-02.jpg",
+    "alt": "Caleb's Pond House — the deck seen past the dining table, chairs and umbrella beyond",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/calebs-pond-03.jpg",
+    "alt": "Caleb's Pond House — the pine trellis over the deck, and the trees past it",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/calebs-pond-04.jpg",
+    "alt": "Caleb's Pond House — the pine trusses and the skylight above the gallery rail",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/calebs-pond-05.jpg",
+    "alt": "Caleb's Pond House — the double-height hall, the gallery rail and the rooms beyond",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "",
+    "image": "images/projects/calebs-pond-06.jpg",
+    "alt": "Caleb's Pond House — a bedroom set under the pine rafters, with a skylight above",
+    "focal": "50% 50%"
+   },
+   {
+    "classes": "wide",
+    "image": "images/projects/calebs-pond-07.jpg",
+    "alt": "Caleb's Pond House — the house in the oaks, with Caleb's Pond and the harbour beyond",
+    "focal": "63% 40%"
+   }
+  ],
+  "body": [
+   {
+    "tag": "p",
+    "text": "Caleb's Pond House is a timber-frame house from 1990 on Chappaquiddick, at the edge of Caleb's Pond. Three generations of one family use it. We didn't set out to change much; the job was to find the few changes that would make the most difference to how they live in it.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "First, we took the timber frame outside. New trellises carry the post-and-beam out to the edge of the deck, which we also enlarged. Second, we sanded the pine instead of painting it. The boards had gone dark and heavy. Sanded back to their original lumberyard finish, they're bright, and they still look like pine.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "Third, the house needed something between the deck and the view. There was the deck, then the far bank of oaks and white pines, the marsh and the pond, and nothing in the middle. The new frames give the view a middle ground and give the deck some shade and shelter.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The wind was the real problem. The mouth of the pond funnels the southwest wind off the harbor, and it was strong enough to keep a family of sailors off their own deck. Now each corner of the deck has a job: a sheltered coffee corner by the kitchen for the morning, a shaded table for lunch, a corner for evening drinks, and a dinner table that works inside or out.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "Inside there are three colors: the wood, which is pine, oak, cedar and mahogany; white on the plaster and door panels; and blue on the window and door trim. We tried about fifteen blues. The one we chose comes from a boat builders' gallery across the harbor.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The first phase was done by the start of June so the family could use the house all summer: new windows and doors, a weather-tight house, sanded cladding, the new colors, the bigger deck and trellises, and two new openings. A window became a door onto the coffee porch, and two windows went into the solid wall at the entry so you can see who's arriving.",
+    "style": ""
+   },
+   {
+    "tag": "p",
+    "text": "The second phase has started. It adds more trellises, a roofed spot at the entry for wet and sandy things, a garden with a vine-covered patio where you arrive, a new front door lined up with the view through the house to the pond, and a dormer to light the double-height hall and look back toward the woods.",
+    "style": ""
+   }
+  ]
+ }
+}

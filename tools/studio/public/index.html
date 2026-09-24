@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio — Auerbach Architecture</title>
+<link rel="stylesheet" href="studio.css">
+</head>
+<body>
+
+<header class="bar">
+  <span class="brand">Studio</span>
+  <select id="pick" aria-label="Project"></select>
+  <nav class="tabs" role="tablist">
+    <button type="button" id="tab-words" role="tab" aria-selected="true">Words</button>
+    <button type="button" id="tab-photos" role="tab" aria-selected="false">Photographs</button>
+    <button type="button" id="tab-lib" role="tab" aria-selected="false" hidden>Review library</button>
+    <button type="button" id="tab-draft" role="tab" aria-selected="false" hidden>Draft layout</button>
+  </nav>
+  <span class="grow"></span>
+  <span id="saved" class="saved" hidden>Saved</span>
+  <a id="livelink" class="ghost" target="_blank" rel="noopener">Open the page</a>
+</header>
+
+<main>
+  <section class="edit" id="view-words" aria-label="Words">
+    <div id="form"></div>
+  </section>
+
+  <section class="edit" id="view-photos" aria-label="Photographs" hidden>
+    <div id="photos"></div>
+  </section>
+
+  <section class="edit" id="view-lib" aria-label="Review library" hidden>
+    <div class="libbar">
+      <span id="libsource" class="saved"></span>
+      <span class="grow"></span>
+      <span id="libfolders" class="chips"></span>
+      <button type="button" id="onlystars" class="tiny">Starred only</button>
+    </div>
+    <div id="grid" class="grid"></div>
+  </section>
+
+  <section class="edit" id="view-draft" aria-label="Draft layout" hidden>
+    <p class="saved" id="drafthint"></p>
+    <div id="draft"></div>
+  </section>
+
+  <section class="preview" aria-label="Preview">
+    <div class="previewbar">
+      <span id="previewpath"></span>
+      <span class="grow"></span>
+      <button type="button" id="reload" class="ghost">Refresh</button>
+    </div>
+    <iframe id="frame" title="The page as it will look"></iframe>
+  </section>
+</main>
+
+<footer class="bar foot">
+  <span id="gitstate" class="gitstate">…</span>
+  <span class="grow"></span>
+  <input id="msg" placeholder="What changed?" aria-label="Commit message">
+  <button type="button" id="commit">Commit</button>
+  <button type="button" id="push" class="ghost">Push</button>
+</footer>
+
+<dialog id="picker">
+  <p id="pickhint" class="saved"></p>
+  <div id="pickgrid" class="pickgrid"></div>
+  <div class="dlgfoot"><button type="button" id="pickcancel" class="ghost">Cancel</button></div>
+</dialog>
+
+<dialog id="cropper">
+  <p id="crophint" class="saved"></p>
+  <div id="cropstage" class="cropstage"></div>
+  <div class="dlgfoot">
+    <input type="range" id="cropsize" min="25" max="100" value="100" aria-label="How much to keep">
+    <label class="inline" id="softwrap" hidden><input type="checkbox" id="allowsoft"> <span>Use it even though it will be soft</span></label>
+    <span class="grow"></span>
+    <button type="button" id="cropcancel" class="ghost">Cancel</button>
+    <button type="button" id="cropuse">Use this</button>
+  </div>
+</dialog>
+
+<div id="toast" class="toast" hidden></div>
+<script src="studio.js"></script>
+</body>
+</html>

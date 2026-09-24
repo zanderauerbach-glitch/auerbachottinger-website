@@ -1,0 +1,108 @@
+# Publishes auerbacharchitecture.com to GitHub Pages.
+#
+# Pages on this repository must be set to "GitHub Actions" rather than
+# "Deploy from a branch" (Settings -> Pages -> Source). The site is built:
+# served straight from the branch, every project page would 404, because
+# those pages only exist once Eleventy generates them.
+#
+# It does not publish the repository as-is. Eleventy builds _site from
+# content/projects/*.json plus the hand-written pages, and copies only the
+# files the site actually needs. That matters because a branch-served Pages
+# site exposes every file in the repository at a public URL — including
+# CLAUDE.md, which carries Zander's phone number, both email addresses and
+# his local machine and Dropbox paths.
+#
+# Nothing reaches _site unless .eleventy.js names it, so the exclusions are
+# now structural rather than a list to keep up to date. The check below stays
+# anyway: it is cheap, and it is the last thing standing between a mistake
+# here and a phone number on the open web.
+name: Deploy site
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it, so the live site is
+# never left half-written.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check every template escapes what it inserts
+        run: node tools/build/lint-templates.js
+
+      - name: Build the site
+        run: npx @11ty/eleventy
+
+      - name: Assemble the site
+        run: |
+          echo "Publishing $(find _site -type f | wc -l) files"
+
+      - name: Fail if anything private slipped through
+        run: |
+          for f in CLAUDE.md; do
+            if [ -e "_site/$f" ]; then
+              echo "::error::$f must not be published"; exit 1
+            fi
+          done
+          for d in tools node_modules src content .github; do
+            if [ -e "_site/$d" ]; then
+              echo "::error::$d must not be published"; exit 1
+            fi
+          done
+          # The live site answers at its own domain. Without this file a
+          # deploy can quietly fall back to the github.io address.
+          if [ "$(cat _site/CNAME 2>/dev/null)" != "auerbacharchitecture.com" ]; then
+            echo "::error::CNAME is missing or wrong"; exit 1
+          fi
+          if [ ! -f _site/index.html ]; then
+            echo "::error::index.html is missing, refusing to deploy an empty site"; exit 1
+          fi
+          # Every page that existed before the build was introduced must still
+          # be built. A template that quietly stops producing one would
+          # otherwise deploy a site with a hole in it.
+          pages=$(find _site -maxdepth 1 -name '*.html' | wc -l)
+          if [ "$pages" -lt 32 ]; then
+            echo "::error::only $pages pages were built, expected at least 32"; exit 1
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
