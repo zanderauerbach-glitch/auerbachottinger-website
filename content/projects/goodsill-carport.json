@@ -7,8 +7,8 @@
   "name": "Sonoma Solarport",
   "location": "Forestville, California",
   "tagline": "A carport and store under one roof.",
-  "status": "construction",
-  "image": null,
+  "status": "complete",
+  "image": "images/projects/goodsill-carport-hero.jpg",
   "alt": "Goodsill Carport",
   "press": null,
   "lat": 38.473,
@@ -37,8 +37,8 @@
    },
    {
     "key": "Status",
-    "value": "In Construction",
-    "valueClasses": " status-construction"
+    "value": "Complete",
+    "valueClasses": " status-complete"
    },
    {
     "key": "Type",
@@ -63,34 +63,28 @@
   ],
   "heading": "Solar-ready carport and store under one roof.",
   "hero": {
-   "image": null,
-   "alt": "Goodsill Carport — Hero View",
+   "image": "images/projects/goodsill-carport-hero.jpg",
+   "alt": "Sonoma Solarport — the carport and store in the California sun",
    "focal": "50% 50%",
    "classes": ""
   },
   "gallery": [
    {
     "classes": "wide",
-    "image": null,
-    "alt": "Goodsill Carport — The Long Elevation",
+    "image": "images/projects/goodsill-carport-01.jpg",
+    "alt": "Sonoma Solarport — aerial view in the California forest",
     "focal": "50% 50%"
    },
    {
     "classes": "",
-    "image": null,
-    "alt": "Goodsill Carport — The Open Bays",
+    "image": "images/projects/goodsill-carport-02.jpg",
+    "alt": "Sonoma Solarport — the pergola and deck in summer sun",
     "focal": "50% 50%"
    },
    {
     "classes": "",
-    "image": null,
-    "alt": "Goodsill Carport — The Store and its Barn Door",
-    "focal": "50% 50%"
-   },
-   {
-    "classes": "wide",
-    "image": null,
-    "alt": "Goodsill Carport — The Roof, Framed for Solar",
+    "image": "images/projects/goodsill-carport-03.jpg",
+    "alt": "Sonoma Solarport — view from under the pergola toward the landscape",
     "focal": "50% 50%"
    }
   ],
