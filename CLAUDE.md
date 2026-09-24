@@ -112,20 +112,18 @@ is pinned exactly; any other office is pinned at town level like the projects.
 
 `npm ci` once, then `npm run serve` to see the site at http://localhost:8080.
 
-`npm run check` — lint, then the documented-commands check, then a build, then
-`compare`. It must exit 0 before anything is pushed to `master`.
+`npm run check` — lint, then the documented-commands check, then a build. It
+must exit 0 before anything is pushed to `master`.
 
-`compare` rebuilds the site and compares every page against the commit in
-`tools/build/BASELINE` as a browser would see it (elements, attributes,
-collapsed text, JSON-LD as parsed objects), so source formatting is not
-mistaken for a change. A difference is a real difference.
-
-Differences that are *meant* live in `tools/build/ACCEPTED.json`, each against a
-fingerprint of the exact lines that differ, with a written reason. Any other
-difference on the same page still fails, and an entry for a page that has
-stopped differing fails too — so the list cannot fill up with exemptions nobody
-rechecks. `npm run compare:accept` regenerates it and refuses to be useful until
-you write the reason by hand.
+`npm run compare` — what this branch changes on the built site. It builds
+`master` as it is on GitHub, builds this checkout, and lists every page that
+differs as a browser would see it (elements, attributes, collapsed text, JSON-LD
+as parsed objects), plus every changed field in `data/projects.js`. Source
+formatting is not mistaken for a change. Run it after a template, stylesheet or
+script change that should leave the pages alone — it should say "identical" —
+and to confirm a content edit touched only the pages it meant to. It exits 1
+whenever anything differs; reading whether that is the difference you meant is
+your job.
 
 The browser suites are separate because they need Playwright's Chromium:
 `npm run filters:test` (the portfolio filters), `npm run map:test` (no two
