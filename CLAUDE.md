@@ -180,8 +180,8 @@ that does not sync through Dropbox. It reports and writes nothing without
 **Naming convention:** `pond-house-01.jpg` style for projects; `<project>-hero.jpg` for each project's hero image.
 
 No sheet from a drawing set goes on the site until its title block is cropped or
-blanked, and no photograph that shows people's faces or a client's private
-papers.
+blanked, and no photograph that shows a client's private papers. People,
+faces included, may appear in photographs.
 
 **Dropbox photo source:** `C:\Dropbox\03_OPERATIONS, MKTING, BD\MARKETING\PROJECT IMAGES\`
 
